@@ -6,6 +6,7 @@ Bricking is Inspired by [Stevia](https://github.com/freshOS/Stevia). The functio
 - Supports [dynamical or conditional layout(issues#53)](https://github.com/freshOS/Stevia/issues/53)
 - Supports TopLayoutGuide
 - Supports center based layout
+- Supports view shrink
 - The architecture and code are more clear
 
 

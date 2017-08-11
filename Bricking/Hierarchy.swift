@@ -21,12 +21,12 @@ import Foundation
     public let LayoutPriorityRequired = NSLayoutPriorityRequired
 #endif
 
-public extension View {
-    public func asv(_ subViews: View...) {
+extension View {
+    open func asv(_ subViews: View...) {
         asv(subViews)
     }
     
-    public func asv(_ subViews: [View]) {
+    open func asv(_ subViews: [View]) {
         subViews.forEach{
             addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -35,19 +35,15 @@ public extension View {
 }
 
 #if os(iOS)
-    public extension UITableViewCell {
-        public override func asv(_ subViews: [UIView]) {
+    extension UITableViewCell {
+        open override func asv(_ subViews: [UIView]) {
             contentView.asv(subViews)
         }
     }
     
-    public extension UICollectionViewCell {
-        public override func asv(_ subViews: [UIView]) {
+    extension UICollectionViewCell {
+        open override func asv(_ subViews: [UIView]) {
             contentView.asv(subViews)
         }
     }
 #endif
-
-
-
-

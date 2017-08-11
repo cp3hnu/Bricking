@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DB40F5AD1F3D479100CEC4DD"
-               BuildableName = "Bricking-MacOS.framework"
+               BuildableName = "Bricking.framework"
                BlueprintName = "Bricking-MacOS"
                ReferencedContainer = "container:Bricking.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB40F5AD1F3D479100CEC4DD"
-            BuildableName = "Bricking-MacOS.framework"
+            BuildableName = "Bricking.framework"
             BlueprintName = "Bricking-MacOS"
             ReferencedContainer = "container:Bricking.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB40F5AD1F3D479100CEC4DD"
-            BuildableName = "Bricking-MacOS.framework"
+            BuildableName = "Bricking.framework"
             BlueprintName = "Bricking-MacOS"
             ReferencedContainer = "container:Bricking.xcodeproj">
          </BuildableReference>
