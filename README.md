@@ -43,7 +43,8 @@ github "cp3hnu/Bricking"
 
 - iOS 9+
 
-  ​
+
+
 
 ## License
 
