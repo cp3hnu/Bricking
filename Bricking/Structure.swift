@@ -43,13 +43,15 @@ public postfix func % (v: CGFloat) -> Percentage {
     return Percentage(value: v)
 }
 
-public enum CPLayoutConstraintAxis: Int {
-    case horizontal
-    case vertical
+public enum LayoutConstraintAxis: Int {
+    case horizontal = 0
+    case vertical = 1
 }
 
-public struct SuperCenterX {}
-public struct SuperCenterY {}
+public struct CenterXPlaceHolder {}
+public struct CenterYPlaceHolder {}
+public let phCenterX = CenterXPlaceHolder()
+public let phCenterY = CenterYPlaceHolder()
 
 @available(iOS 9.0, *)
 public class MacLayoutSupport {

@@ -223,7 +223,7 @@ public func - (left: Space, right: View) -> [View] {
 
 // MARK: - CenterX
 @discardableResult
-public func - (left: View, right: SuperCenterX) -> [View] {
+public func - (left: View, right: CenterXPlaceHolder) -> [View] {
     let centerXView = View()
     left.superview?.asv(centerXView)
     centerXView.centerHorizontally()
@@ -231,7 +231,7 @@ public func - (left: View, right: SuperCenterX) -> [View] {
 }
 
 @discardableResult
-public func - (left: [View], right: SuperCenterX) -> [View] {
+public func - (left: [View], right: CenterXPlaceHolder) -> [View] {
     guard let last = left.last else { return left }
     
     let centerXView = View()
@@ -241,7 +241,7 @@ public func - (left: [View], right: SuperCenterX) -> [View] {
 }
 
 @discardableResult
-public func - (left: PartialFlexibleConstraint, right: SuperCenterX) -> [View] {
+public func - (left: PartialFlexibleConstraint, right: CenterXPlaceHolder) -> [View] {
     guard let last = left.views.last else { return left.views }
     
     let centerXView = View()

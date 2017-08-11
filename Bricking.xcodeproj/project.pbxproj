@@ -37,6 +37,8 @@
 		DB40F5FC1F3D49FB00CEC4DD /* Vertically.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */; };
 		DB40F60A1F3D4EDE00CEC4DD /* Bricking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB40F6091F3D4EDE00CEC4DD /* Bricking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB40F60E1F3D510600CEC4DD /* Bricking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB40F6091F3D4EDE00CEC4DD /* Bricking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
+		DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,7 @@
 		DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertically.swift; sourceTree = "<group>"; };
 		DB40F5FE1F3D4A9F00CEC4DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB40F6091F3D4EDE00CEC4DD /* Bricking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bricking.h; sourceTree = "<group>"; };
+		DB40F6111F3D60AF00CEC4DD /* Shrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shrink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 				DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+Operator.swift */,
 				DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */,
 				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
+				DB40F6111F3D60AF00CEC4DD /* Shrink.swift */,
 			);
 			path = Bricking;
 			sourceTree = "<group>";
@@ -243,6 +247,7 @@
 				DB40F5E31F3D49FB00CEC4DD /* Anchor.swift in Sources */,
 				DB40F5F71F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB40F5F51F3D49FB00CEC4DD /* NSLayoutAnchor+Operator.swift in Sources */,
+				DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */,
 				DB40F5E51F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB40F5E91F3D49FB00CEC4DD /* CPLayoutAttribute+Operator.swift in Sources */,
 				DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */,
@@ -264,6 +269,7 @@
 				DB40F5E41F3D49FB00CEC4DD /* Anchor.swift in Sources */,
 				DB40F5F81F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB40F5F61F3D49FB00CEC4DD /* NSLayoutAnchor+Operator.swift in Sources */,
+				DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */,
 				DB40F5E61F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB40F5EA1F3D49FB00CEC4DD /* CPLayoutAttribute+Operator.swift in Sources */,
 				DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */,

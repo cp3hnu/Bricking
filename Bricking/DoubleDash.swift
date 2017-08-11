@@ -98,16 +98,16 @@ public func -- (left: Space, right: View) -> [View] {
 
 // MARK: - CenterX
 @discardableResult
-public func -- (left: View, right: SuperCenterX) -> [View] {
+public func -- (left: View, right: CenterXPlaceHolder) -> [View] {
     return left-right
 }
 
 @discardableResult
-public func -- (left: [View], right: SuperCenterX) -> [View] {
+public func -- (left: [View], right: CenterXPlaceHolder) -> [View] {
     return left-right
 }
 
 @discardableResult
-public func -- (left: PartialFlexibleConstraint, right: SuperCenterX) -> [View] {
+public func -- (left: PartialFlexibleConstraint, right: CenterXPlaceHolder) -> [View] {
     return left-right
 }

@@ -26,7 +26,7 @@ public extension View {
         return fill(.horizontal, points: points)
     }
     
-    private func fill(_ axis: CPLayoutConstraintAxis, points: CGFloat = 0) -> Self {
+    private func fill(_ axis: LayoutConstraintAxis, points: CGFloat = 0) -> Self {
         if axis == .horizontal {
             self.laLeft == points
             self.laRight == points

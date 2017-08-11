@@ -32,7 +32,7 @@ public extension View {
                         self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preView.laBottom)
                     } else if let preViews = objects[index-2] as? [View] {
                         self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preViews.first!.laBottom)
-                    } else if objects[index-2] is SuperCenterY {
+                    } else if objects[index-2] is CenterYPlaceHolder {
                         self.flexiableAttribute(view.laTop, fm: pfm, attribute2: self.laCenterY)
                     } else if let top = objects[index-2] as? LayoutSupport {
                         if #available(iOS 9.0, *) {
@@ -48,7 +48,7 @@ public extension View {
                         self.flexiableAttribute(view.laTop, fm: fm, attribute2: preView.laBottom)
                     } else if let preViews = objects[index-1] as? [View] {
                         self.flexiableAttribute(view.laTop, fm: fm, attribute2: preViews.first!.laBottom)
-                    } else if objects[index-1] is SuperCenterY {
+                    } else if objects[index-1] is CenterYPlaceHolder {
                         self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
                     } else if let top = objects[index-1] as? LayoutSupport {
                         if #available(iOS 9.0, *) {
@@ -88,7 +88,7 @@ public extension View {
                 alignHorizontally(views)
                 let view = views.first!
                 addConstraintsVertically(index, view)
-            case is SuperCenterY:
+            case is CenterYPlaceHolder:
                 if let pfm = previousFlexibleMargin, index != 1 {
                     if let preView = objects[index-2] as? View {
                         self.flexiableAttribute(self.laCenterY, fm: pfm, attribute2: preView.laBottom)
