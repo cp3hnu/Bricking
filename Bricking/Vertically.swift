@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension View {
+extension View {
     @discardableResult
     public func layout(_ objects: Any...) -> [View] {
         return layoutVertically(objects)

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Fixable
-public extension View {
+extension View {
     @discardableResult
     public func left(_ points: CGFloat) -> Self {
         self.laLeft == points
@@ -55,7 +55,7 @@ public extension View {
 }
 
 // MARK: - Flexible
-public extension View {
+extension View {
     @discardableResult
     public func left(_ fm: FlexibleMargin) -> Self {
         return flexiableAttribute(self.laLeft, fm: fm)
@@ -101,7 +101,7 @@ public extension View {
 }
 
 // MARK: - Percentage
-public extension View {
+extension View {
     @discardableResult
     public func left(_ p: Percentage) -> Self {
         if let spv = superview {

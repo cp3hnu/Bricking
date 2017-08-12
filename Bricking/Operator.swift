@@ -226,7 +226,8 @@ public func - (left: Space, right: View) -> [View] {
 public func - (left: View, right: CenterXPlaceHolder) -> [View] {
     let centerXView = View()
     left.superview?.asv(centerXView)
-    centerXView.centerHorizontally()
+    centerXView.centerHorizontally().size(0)
+    alignHorizontally(left, centerXView)
     return left - centerXView
 }
 
@@ -236,7 +237,8 @@ public func - (left: [View], right: CenterXPlaceHolder) -> [View] {
     
     let centerXView = View()
     last.superview?.asv(centerXView)
-    centerXView.centerHorizontally()
+    centerXView.centerHorizontally().size(0)
+    alignHorizontally(last, centerXView)
     return left - centerXView
 }
 
@@ -246,6 +248,7 @@ public func - (left: PartialFlexibleConstraint, right: CenterXPlaceHolder) -> [V
     
     let centerXView = View()
     last.superview?.asv(centerXView)
-    centerXView.centerHorizontally()
+    centerXView.centerHorizontally().size(0)
+    alignHorizontally(last, centerXView)
     return left - centerXView
 }

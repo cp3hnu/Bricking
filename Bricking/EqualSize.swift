@@ -56,7 +56,7 @@ private func equal(_ attribute: NSLayoutAttribute, views: [View]) {
     }
 }
 
-public extension View {
+extension View {
     @discardableResult
     public func heightEqualsWidth() -> Self {
         self.laWidth == self.laHeight

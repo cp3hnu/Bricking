@@ -22,7 +22,7 @@ public struct CPLayoutAttribute {
     }
 }
 
-public extension View {
+extension View {
     public var laWidth: CPLayoutAttribute {
         return CPLayoutAttribute(view: self, attribute: .width)
     }

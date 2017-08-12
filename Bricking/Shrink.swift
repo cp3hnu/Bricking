@@ -6,7 +6,7 @@
 //  Copyright © 2017年 CP3. All rights reserved.
 //
 
-public extension View {
+extension View {
     private struct AssociatedKeys {
         static var previousConstraint = "previousConstraint"
         static var nextConstraint = "nextConstraint"

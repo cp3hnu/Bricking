@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Single Constraint
-public extension View {
+extension View {
     public var leftConstraint: NSLayoutConstraint? {
         return constraintFor(attribute: .left)
     }
@@ -67,7 +67,7 @@ public extension View {
 }
 
 // MARK: - multiple Constraints
-public extension View {
+extension View {
     public func constraintsFor(attribute: NSLayoutAttribute) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         for target in [superview, self].flatMap({return $0}) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension View {
+extension View {
     @discardableResult
     public func fillContainer(_ padding: CGFloat = 0) -> Self {
         fillHorizontally(padding)

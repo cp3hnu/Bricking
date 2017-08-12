@@ -498,6 +498,7 @@
 				DB40F5B41F3D479100CEC4DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB40F5CF1F3D492A00CEC4DD /* Build configuration list for PBXNativeTarget "Bricking-iOS" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +507,7 @@
 				DB40F5D11F3D492A00CEC4DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
