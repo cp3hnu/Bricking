@@ -37,12 +37,14 @@ extension View {
 #if os(iOS)
     extension UITableViewCell {
         open override func asv(_ subViews: [UIView]) {
+            contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.asv(subViews)
         }
     }
     
     extension UICollectionViewCell {
         open override func asv(_ subViews: [UIView]) {
+            contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.asv(subViews)
         }
     }
