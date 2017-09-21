@@ -60,3 +60,28 @@ public class MacLayoutSupport {
     var heightAnchor: NSLayoutDimension = NSLayoutDimension()
 }
 
+public struct PriorityAttribute {
+    public var attribute: CPLayoutAttribute
+    public var priority: LayoutPriority
+}
+
+public struct PriorityConstant {
+    public var constant: CGFloat
+    public var priority: LayoutPriority
+}
+
+infix operator !! : PriorityPrecedence
+precedencegroup PriorityPrecedence {
+    lowerThan: AdditionPrecedence
+}
+
+public func !! (left: CGFloat, right: LayoutPriority) -> PriorityConstant {
+    return PriorityConstant(constant: left, priority: right)
+}
+
+public func !! (left: CPLayoutAttribute, right: LayoutPriority) -> PriorityAttribute {
+    return PriorityAttribute(attribute: left, priority: right)
+}
+
+
+

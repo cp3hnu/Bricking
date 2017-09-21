@@ -54,18 +54,18 @@ public extension CPLayoutAttribute {
     }
     
     @discardableResult
-    static public func == (left: CPLayoutAttribute, right: (CGFloat, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToSuperView(left: left, relation: .equal, right: right.0, priority: right.1)
+    static public func == (left: CPLayoutAttribute, right: PriorityConstant) -> NSLayoutConstraint? {
+        return relativeToSuperView(left: left, relation: .equal, right: right.constant, priority: right.priority)
     }
     
     @discardableResult
-    static public func >= (left: CPLayoutAttribute, right: (CGFloat, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToSuperView(left: left, relation: .greaterThanOrEqual, right: right.0, priority: right.1)
+    static public func >= (left: CPLayoutAttribute, right: PriorityConstant) -> NSLayoutConstraint? {
+        return relativeToSuperView(left: left, relation: .greaterThanOrEqual, right: right.constant, priority: right.priority)
     }
     
     @discardableResult
-    static public func <= (left: CPLayoutAttribute, right: (CGFloat, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToSuperView(left: left, relation: .lessThanOrEqual, right: right.0, priority: right.1)
+    static public func <= (left: CPLayoutAttribute, right: PriorityConstant) -> NSLayoutConstraint? {
+        return relativeToSuperView(left: left, relation: .lessThanOrEqual, right: right.constant, priority: right.priority)
     }
     
     static private func relativeToSuperView(left: CPLayoutAttribute, relation: NSLayoutRelation, right: CGFloat, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
@@ -115,18 +115,18 @@ public extension CPLayoutAttribute {
     }
     
     @discardableResult
-    static public func == (left: CPLayoutAttribute, right: (CPLayoutAttribute, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToAttribute(left: left, relation: .equal, right: right.0, priority: right.1)
+    static public func == (left: CPLayoutAttribute, right: PriorityAttribute) -> NSLayoutConstraint? {
+        return relativeToAttribute(left: left, relation: .equal, right: right.attribute, priority: right.priority)
     }
     
     @discardableResult
-    static public func >= (left: CPLayoutAttribute, right: (CPLayoutAttribute, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToAttribute(left: left, relation: .greaterThanOrEqual, right: right.0, priority: right.1)
+    static public func >= (left: CPLayoutAttribute, right: PriorityAttribute) -> NSLayoutConstraint? {
+        return relativeToAttribute(left: left, relation: .greaterThanOrEqual, right: right.attribute, priority: right.priority)
     }
     
     @discardableResult
-    static public func <= (left: CPLayoutAttribute, right: (CPLayoutAttribute, LayoutPriority)) -> NSLayoutConstraint? {
-        return relativeToAttribute(left: left, relation: .lessThanOrEqual, right: right.0, priority: right.1)
+    static public func <= (left: CPLayoutAttribute, right: PriorityAttribute) -> NSLayoutConstraint? {
+        return relativeToAttribute(left: left, relation: .lessThanOrEqual, right: right.attribute, priority: right.priority)
     }
     
     static private func relativeToAttribute(left: CPLayoutAttribute, relation: NSLayoutRelation, right: CPLayoutAttribute, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {

@@ -39,6 +39,8 @@
 		DB40F60E1F3D510600CEC4DD /* Bricking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB40F6091F3D4EDE00CEC4DD /* Bricking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
 		DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
+		DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
+		DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,7 @@
 		DB40F5FE1F3D4A9F00CEC4DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB40F6091F3D4EDE00CEC4DD /* Bricking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bricking.h; sourceTree = "<group>"; };
 		DB40F6111F3D60AF00CEC4DD /* Shrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shrink.swift; sourceTree = "<group>"; };
+		DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */,
 				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
 				DB40F6111F3D60AF00CEC4DD /* Shrink.swift */,
+				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
 			);
 			path = Bricking;
 			sourceTree = "<group>";
@@ -253,6 +257,7 @@
 				DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */,
 				DB40F5EF1F3D49FB00CEC4DD /* Fill.swift in Sources */,
 				DB40F5FB1F3D49FB00CEC4DD /* Vertically.swift in Sources */,
+				DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5ED1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
 				DB40F5EB1F3D49FB00CEC4DD /* DoubleDash.swift in Sources */,
 				DB40F5E71F3D49FB00CEC4DD /* CPLayoutAttribute.swift in Sources */,
@@ -275,6 +280,7 @@
 				DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */,
 				DB40F5F01F3D49FB00CEC4DD /* Fill.swift in Sources */,
 				DB40F5FC1F3D49FB00CEC4DD /* Vertically.swift in Sources */,
+				DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5EE1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
 				DB40F5EC1F3D49FB00CEC4DD /* DoubleDash.swift in Sources */,
 				DB40F5E81F3D49FB00CEC4DD /* CPLayoutAttribute.swift in Sources */,

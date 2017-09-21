@@ -29,20 +29,20 @@ extension View {
     }
 }
 
-public func pfCenterHorizontally(_ views: View...) {
-    pfCenterHorizontally(views)
+public func centerHorizontally(_ views: View...) {
+    centerHorizontally(views)
 }
 
-public func pfCenterHorizontally(_ views: [View]) {
+public func centerHorizontally(_ views: [View]) {
     views.first?.centerHorizontally()
     alignVertically(views)
 }
 
-public func pfCenterVertically(_ views: View...) {
-    pfCenterVertically(views)
+public func centerVertically(_ views: View...) {
+    centerVertically(views)
 }
 
-public func pfCenterVertically(_ views: [View]) {
+public func centerVertically(_ views: [View]) {
     views.first?.centerVertically()
     alignHorizontally(views)
 }
