@@ -73,10 +73,23 @@ public struct PriorityConstant {
 infix operator !! : PriorityPrecedence
 precedencegroup PriorityPrecedence {
     lowerThan: AdditionPrecedence
+    higherThan: ComparisonPrecedence
 }
 
 public func !! (left: CGFloat, right: LayoutPriority) -> PriorityConstant {
     return PriorityConstant(constant: left, priority: right)
+}
+
+public func !! (left: Int, right: LayoutPriority) -> PriorityConstant {
+    return PriorityConstant(constant: CGFloat(left), priority: right)
+}
+
+public func !! (left: Float, right: LayoutPriority) -> PriorityConstant {
+    return PriorityConstant(constant: CGFloat(left), priority: right)
+}
+
+public func !! (left: Double, right: LayoutPriority) -> PriorityConstant {
+    return PriorityConstant(constant: CGFloat(left), priority: right)
 }
 
 public func !! (left: CPLayoutAttribute, right: LayoutPriority) -> PriorityAttribute {
