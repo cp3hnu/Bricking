@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB12861B1F7959650067EE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB12861A1F7959650067EE77 /* AppDelegate.swift */; };
+		DB12861D1F7959650067EE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB12861C1F7959650067EE77 /* ViewController.swift */; };
+		DB1286201F7959650067EE77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB12861E1F7959650067EE77 /* Main.storyboard */; };
+		DB1286221F7959650067EE77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1286211F7959650067EE77 /* Assets.xcassets */; };
+		DB1286251F7959650067EE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1286231F7959650067EE77 /* LaunchScreen.storyboard */; };
+		DB12862A1F795A4A0067EE77 /* Bricking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB40F5CA1F3D492900CEC4DD /* Bricking.framework */; };
+		DB12862B1F795A4A0067EE77 /* Bricking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB40F5CA1F3D492900CEC4DD /* Bricking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E31F3D49FB00CEC4DD /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D41F3D49FB00CEC4DD /* Anchor.swift */; };
@@ -43,7 +50,38 @@
 		DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DB12862C1F795A4A0067EE77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB40F5791F3D40C600CEC4DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB40F5C91F3D492900CEC4DD;
+			remoteInfo = "Bricking-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB12862E1F795A4A0067EE77 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB12862B1F795A4A0067EE77 /* Bricking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DB1286181F7959640067EE77 /* TestiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB12861A1F7959650067EE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB12861C1F7959650067EE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB12861F1F7959650067EE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB1286211F7959650067EE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB1286241F7959650067EE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB1286261F7959650067EE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB40F5AE1F3D479100CEC4DD /* Bricking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bricking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40F5CA1F3D492900CEC4DD /* Bricking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bricking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
@@ -67,6 +105,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB1286151F7959640067EE77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB12862A1F795A4A0067EE77 /* Bricking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB40F5AA1F3D479100CEC4DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,10 +130,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB1286191F7959650067EE77 /* TestiOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB12861A1F7959650067EE77 /* AppDelegate.swift */,
+				DB12861C1F7959650067EE77 /* ViewController.swift */,
+				DB12861E1F7959650067EE77 /* Main.storyboard */,
+				DB1286211F7959650067EE77 /* Assets.xcassets */,
+				DB1286231F7959650067EE77 /* LaunchScreen.storyboard */,
+				DB1286261F7959650067EE77 /* Info.plist */,
+			);
+			path = TestiOS;
+			sourceTree = "<group>";
+		};
 		DB40F5781F3D40C600CEC4DD = {
 			isa = PBXGroup;
 			children = (
 				DB40F5D21F3D49E600CEC4DD /* Bricking */,
+				DB1286191F7959650067EE77 /* TestiOS */,
 				DB40F5831F3D40C600CEC4DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +157,7 @@
 			children = (
 				DB40F5AE1F3D479100CEC4DD /* Bricking.framework */,
 				DB40F5CA1F3D492900CEC4DD /* Bricking.framework */,
+				DB1286181F7959640067EE77 /* TestiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +209,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DB1286171F7959640067EE77 /* TestiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB1286271F7959650067EE77 /* Build configuration list for PBXNativeTarget "TestiOS" */;
+			buildPhases = (
+				DB1286141F7959640067EE77 /* Sources */,
+				DB1286151F7959640067EE77 /* Frameworks */,
+				DB1286161F7959640067EE77 /* Resources */,
+				DB12862E1F795A4A0067EE77 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB12862D1F795A4A0067EE77 /* PBXTargetDependency */,
+			);
+			name = TestiOS;
+			productName = TestiOS;
+			productReference = DB1286181F7959640067EE77 /* TestiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DB40F5AD1F3D479100CEC4DD /* Bricking-MacOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB40F5B51F3D479100CEC4DD /* Build configuration list for PBXNativeTarget "Bricking-MacOS" */;
@@ -190,9 +270,15 @@
 		DB40F5791F3D40C600CEC4DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CP3;
 				TargetAttributes = {
+					DB1286171F7959640067EE77 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = RJF3498JFC;
+						ProvisioningStyle = Automatic;
+					};
 					DB40F5AD1F3D479100CEC4DD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJF3498JFC;
@@ -213,6 +299,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DB40F5781F3D40C600CEC4DD;
 			productRefGroup = DB40F5831F3D40C600CEC4DD /* Products */;
@@ -221,11 +308,22 @@
 			targets = (
 				DB40F5C91F3D492900CEC4DD /* Bricking-iOS */,
 				DB40F5AD1F3D479100CEC4DD /* Bricking-MacOS */,
+				DB1286171F7959640067EE77 /* TestiOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB1286161F7959640067EE77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1286251F7959650067EE77 /* LaunchScreen.storyboard in Resources */,
+				DB1286221F7959650067EE77 /* Assets.xcassets in Resources */,
+				DB1286201F7959650067EE77 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB40F5AC1F3D479100CEC4DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +341,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB1286141F7959640067EE77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB12861D1F7959650067EE77 /* ViewController.swift in Sources */,
+				DB12861B1F7959650067EE77 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB40F5A91F3D479100CEC4DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,7 +398,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DB12862D1F795A4A0067EE77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB40F5C91F3D492900CEC4DD /* Bricking-iOS */;
+			targetProxy = DB12862C1F795A4A0067EE77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB12861E1F7959650067EE77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB12861F1F7959650067EE77 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB1286231F7959650067EE77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB1286241F7959650067EE77 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		DB1286281F7959650067EE77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RJF3498JFC;
+				INFOPLIST_FILE = TestiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DB1286291F7959650067EE77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RJF3498JFC;
+				INFOPLIST_FILE = TestiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		DB40F5881F3D40C600CEC4DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +650,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB1286271F7959650067EE77 /* Build configuration list for PBXNativeTarget "TestiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB1286281F7959650067EE77 /* Debug */,
+				DB1286291F7959650067EE77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DB40F57C1F3D40C600CEC4DD /* Build configuration list for PBXProject "Bricking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

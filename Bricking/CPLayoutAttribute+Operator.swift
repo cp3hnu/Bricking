@@ -130,7 +130,7 @@ public extension CPLayoutAttribute {
     }
     
     static private func relativeToAttribute(left: CPLayoutAttribute, relation: NSLayoutRelation, right: CPLayoutAttribute, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
-        guard let _ = left.view.superview else { return nil }
+        guard let _ = closestCommonAncestor(left.view, right.view) else { return nil }
         let constraint = NSLayoutConstraint(item: left.view,
                                             attribute: left.attribute,
                                             relatedBy: relation,
@@ -141,5 +141,32 @@ public extension CPLayoutAttribute {
         constraint.priority = priority
         constraint.isActive = true
         return constraint
+    }
+}
+
+private func closestCommonAncestor(_ a: View, _ b: View) -> View? {
+    let (aSuper, bSuper) = (a.superview, b.superview)
+    if a === b { return a }
+    if a === bSuper { return a }
+    if b === aSuper { return b }
+    if aSuper === bSuper { return aSuper }
+    let ancestorsOfA = Set(ancestors(a))
+    for ancestor in ancestors(b) {
+        if ancestorsOfA.contains(ancestor) {
+            return ancestor
+        }
+    }
+    
+    return .none
+}
+
+private func ancestors(_ v: View) -> AnySequence<View> {
+    return AnySequence { () -> AnyIterator<View> in
+        var view: View? = v
+        return AnyIterator {
+            let current = view
+            view = view?.superview
+            return current
+        }
     }
 }
