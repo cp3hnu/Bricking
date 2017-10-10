@@ -58,20 +58,20 @@ public func alignBottoms(_ views: [View]) {
     align(.bottom, views: views)
 }
 
-public func alignLeftAndRight(_ views: View...) {
-    alignLeftAndRight(views)
+public func alignLeftAndRights(_ views: View...) {
+    alignLeftAndRights(views)
 }
 
-public func alignLeftAndRight(_ views: [View]) {
+public func alignLeftAndRights(_ views: [View]) {
     alignLefts(views)
     alignRights(views)
 }
 
-public func alignTopAndBottom(_ views: View...) {
-    alignTopAndBottom(views)
+public func alignTopAndBottoms(_ views: View...) {
+    alignTopAndBottoms(views)
 }
 
-public func alignTopAndBottom(_ views: [View]) {
+public func alignTopAndBottoms(_ views: [View]) {
     alignTops(views)
     alignBottoms(views)
 }
@@ -81,8 +81,8 @@ public func alignAllEdges(_ views: View...) {
 }
 
 public func alignAllEdges(_ views: [View]) {
-    alignLeftAndRight(views)
-    alignTopAndBottom(views)
+    alignLeftAndRights(views)
+    alignTopAndBottoms(views)
 }
 
 private func align(_ attribute: NSLayoutAttribute, views: [View]) {

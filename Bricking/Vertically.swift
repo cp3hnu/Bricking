@@ -36,7 +36,7 @@ extension View {
                         self.flexiableAttribute(view.laTop, fm: pfm, attribute2: self.laCenterY)
                     } else if let top = objects[index-2] as? LayoutSupport {
                         if #available(iOS 9.0, *) {
-                            self.flexiableAttribute(view.topAnchor, fm: pfm, anchor2: top.bottomAnchor)
+                            self.flexiableAnchor(view.topAnchor, fm: pfm, anchor2: top.bottomAnchor)
                         }
                     }
                 }
@@ -52,7 +52,7 @@ extension View {
                     self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
                 } else if let top = objects[index-1] as? LayoutSupport {
                     if #available(iOS 9.0, *) {
-                        self.flexiableAttribute(view.topAnchor, fm: fm, anchor2: top.bottomAnchor)
+                        self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: top.bottomAnchor)
                     }
                 }
             }
@@ -109,18 +109,18 @@ extension View {
                 guard index == count - 1 else { break }
                 if let pfm = previousFlexibleMargin, index >= 2 {
                     if let preView = objects[index-2] as? View {
-                        self.flexiableAttribute(preView.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
+                        self.flexiableAnchor(preView.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
                     } else if let preViews = objects[index-2] as? [View] {
-                        self.flexiableAttribute(preViews.first!.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
+                        self.flexiableAnchor(preViews.first!.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
                     }
                     previousFlexibleMargin = nil
                 } else {
                     guard index >= 1 else { break }
                     let fm = FlexibleMargin(constant: 0, relation: .equal)
                     if let preView = objects[index-1] as? View {
-                        self.flexiableAttribute(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                        self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
                     } else if let preViews = objects[index-1] as? [View] {
-                        self.flexiableAttribute(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                        self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
                     }
                 }
             default: ()
@@ -156,7 +156,7 @@ extension View {
     }
     
     @available(iOS 9.0, *)
-    private func flexiableAttribute(_ anchor1: NSLayoutYAxisAnchor,
+    private func flexiableAnchor(_ anchor1: NSLayoutYAxisAnchor,
                                     fm: FlexibleMargin,
                                     anchor2: NSLayoutYAxisAnchor) {
         switch fm.relation {

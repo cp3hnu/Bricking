@@ -22,28 +22,33 @@ import Foundation
 #endif
 
 extension View {
-    open func asv(_ subViews: View...) {
-        asv(subViews)
+    @discardableResult
+    open func asv(_ subViews: View...) -> View {
+        return asv(subViews)
     }
     
-    open func asv(_ subViews: [View]) {
+    @discardableResult
+    open func asv(_ subViews: [View]) -> View {
         subViews.forEach{
             addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+        return self
     }
 }
 
 #if os(iOS)
     extension UITableViewCell {
-        open override func asv(_ subViews: [UIView]) {
-            contentView.asv(subViews)
+        @discardableResult
+        open override func asv(_ subViews: [UIView]) -> View {
+            return contentView.asv(subViews)
         }
     }
     
     extension UICollectionViewCell {
-        open override func asv(_ subViews: [UIView]) {
-            contentView.asv(subViews)
+        @discardableResult
+        open override func asv(_ subViews: [UIView]) -> View {
+            return contentView.asv(subViews)
         }
     }
 #endif

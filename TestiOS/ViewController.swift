@@ -13,46 +13,29 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let headerView: UIView = {
-            let portraitImgView = UIImageView()
-            portraitImgView.layer.cornerRadius = 4
-            portraitImgView.layer.masksToBounds = true
-            portraitImgView.backgroundColor = UIColor.red
-            
-            let nameLabel = UILabel()
-            let idLabel = UILabel()
-            let indicator = UIImageView()
-            indicator.setContentHuggingPriority(UILayoutPriorityDefaultLow + 1, for: .horizontal)
-            let headerView = UIView()
-            headerView.asv(portraitImgView, nameLabel, idLabel, indicator)
-//            headerView.layout(
-//                nameLabel,
-//                5,
-//                phCenterY,
-//                5,
-//                idLabel
-//            )
-            headerView.laCenterY == nameLabel.laBottom + 5
-            idLabel.laTop == headerView.laCenterY + 5
-            |-15-portraitImgView.top(15).bottom(15).size(65)-nameLabel-indicator-15-|
-            indicator.centerVertically()
-            alignLeftAndRight(nameLabel, idLabel)
-            
-            nameLabel.text = "大宝"
-            idLabel.text = "12123"
-            return headerView
-        }()
-        
-        view.asv(headerView)
-        |headerView.top(64)|
+        view.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        title = "Test"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func clicked(_ sender: Any) {
+        let ctrlr = SecondCtrlr()
+        navigationController?.pushViewController(ctrlr, animated: true)
     }
+}
 
-
+class SecondCtrlr: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        title = "Second"
+        let sView = UIView()
+        sView.backgroundColor = UIColor.white
+        view.asv(sView)
+        view.layout(
+            topLayoutGuide,
+            15,
+            |sView| ~ 100
+        )
+    }
 }
 

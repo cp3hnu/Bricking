@@ -657,6 +657,7 @@
 				DB1286291F7959650067EE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB40F57C1F3D40C600CEC4DD /* Build configuration list for PBXProject "Bricking" */ = {
 			isa = XCConfigurationList;
