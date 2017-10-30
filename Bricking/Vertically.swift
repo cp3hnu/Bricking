@@ -24,41 +24,6 @@ extension View {
         let count = objects.count
         var previousFlexibleMargin: FlexibleMargin? = nil
         
-        let addConstraintsVertically = { (index: Int, view: View) in
-            if let pfm = previousFlexibleMargin {
-                if index == 1 {
-                    view.top(pfm)
-                } else {
-                    if let preView = objects[index-2] as? View {
-                        self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preView.laBottom)
-                    } else if let preViews = objects[index-2] as? [View] {
-                        self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preViews.first!.laBottom)
-                    } else if objects[index-2] is CenterYPlaceHolder {
-                        self.flexiableAttribute(view.laTop, fm: pfm, attribute2: self.laCenterY)
-                    } else if let top = objects[index-2] as? LayoutSupport {
-                        if #available(iOS 9.0, *) {
-                            self.flexiableAnchor(view.topAnchor, fm: pfm, anchor2: top.bottomAnchor)
-                        }
-                    }
-                }
-                previousFlexibleMargin = nil
-            } else {
-                guard index >= 1 else { return }
-                let fm = FlexibleMargin(constant: 0, relation: .equal)
-                if let preView = objects[index-1] as? View {
-                    self.flexiableAttribute(view.laTop, fm: fm, attribute2: preView.laBottom)
-                } else if let preViews = objects[index-1] as? [View] {
-                    self.flexiableAttribute(view.laTop, fm: fm, attribute2: preViews.first!.laBottom)
-                } else if objects[index-1] is CenterYPlaceHolder {
-                    self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
-                } else if let top = objects[index-1] as? LayoutSupport {
-                    if #available(iOS 9.0, *) {
-                        self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: top.bottomAnchor)
-                    }
-                }
-            }
-        }
-        
         for (index, obj) in objects.enumerated() {
             switch obj {
             case is Int: fallthrough
@@ -83,11 +48,11 @@ extension View {
                     }
                 }
             case let view as View:
-                addConstraintsVertically(index, view)
+                addConstraints(objects: objects, index: index, view: view, flexibleMargin: &previousFlexibleMargin)
             case let views as [View]:
                 alignHorizontally(views)
                 let view = views.first!
-                addConstraintsVertically(index, view)
+                addConstraints(objects: objects, index: index, view: view, flexibleMargin: &previousFlexibleMargin)
             case is CenterYPlaceHolder:
                 if let pfm = previousFlexibleMargin, index >= 2 {
                     if let preView = objects[index-2] as? View {
@@ -105,27 +70,12 @@ extension View {
                         self.flexiableAttribute(self.laCenterY, fm: fm, attribute2: preViews.first!.laBottom)
                     }
                 }
-            case let bottom as LayoutSupport:
-                guard #available(iOS 9.0, *) else { break }
-                guard index == count - 1 else { break }
-                if let pfm = previousFlexibleMargin, index >= 2 {
-                    if let preView = objects[index-2] as? View {
-                        self.flexiableAnchor(preView.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
-                    } else if let preViews = objects[index-2] as? [View] {
-                        self.flexiableAnchor(preViews.first!.bottomAnchor, fm: pfm, anchor2: bottom.topAnchor)
-                    }
-                    previousFlexibleMargin = nil
-                } else {
-                    guard index >= 1 else { break }
-                    let fm = FlexibleMargin(constant: 0, relation: .equal)
-                    if let preView = objects[index-1] as? View {
-                        self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
-                    } else if let preViews = objects[index-1] as? [View] {
-                        self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
-                    }
-                }
-            default: ()
+            default: break
             }
+        }
+        
+        if #available(iOS 9.0, *) {
+            bottomAnchorConstraints(objects: objects, flexibleMargin: previousFlexibleMargin)
         }
         
         return objects.map {$0 as? View }.flatMap {$0}
@@ -167,6 +117,69 @@ extension View {
             anchor1 <= (anchor2, fm.constant)
         case .equal:
             anchor1 == (anchor2, fm.constant)
+        }
+    }
+    
+    func addConstraints(objects: [Any], index: Int, view: View, flexibleMargin: inout FlexibleMargin?) {
+        if let pfm = flexibleMargin {
+            if index == 1 {
+                view.top(pfm)
+            } else {
+                let preObject = objects[index-2]
+                if let preView = preObject as? View {
+                    self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preView.laBottom)
+                } else if let preViews = preObject as? [View] {
+                    self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preViews.first!.laBottom)
+                } else if preObject is CenterYPlaceHolder {
+                    self.flexiableAttribute(view.laTop, fm: pfm, attribute2: self.laCenterY)
+                } else if let top = preObject as? LayoutSupport {
+                    if #available(iOS 9.0, *) {
+                        self.flexiableAnchor(view.topAnchor, fm: pfm, anchor2: top.bottomAnchor)
+                    }
+                }
+            }
+            flexibleMargin = nil
+        } else {
+            guard index >= 1 else { return }
+            let fm = FlexibleMargin(constant: 0, relation: .equal)
+            let preObject = objects[index-1]
+            if let preView = preObject as? View {
+                self.flexiableAttribute(view.laTop, fm: fm, attribute2: preView.laBottom)
+            } else if let preViews = preObject as? [View] {
+                self.flexiableAttribute(view.laTop, fm: fm, attribute2: preViews.first!.laBottom)
+            } else if preObject is CenterYPlaceHolder {
+                self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
+            } else if let top = preObject as? LayoutSupport {
+                if #available(iOS 9.0, *) {
+                    self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: top.bottomAnchor)
+                }
+            }
+        }
+    }
+    
+    @available(iOS 9.0, *)
+    func bottomAnchorConstraints(objects: [Any], flexibleMargin: FlexibleMargin?) {
+        guard let bottom = objects.last as? LayoutSupport else { return }
+        
+        let lastIndex = objects.count - 1
+        if let pfm = flexibleMargin {
+            let fm = FlexibleMargin(constant: -pfm.constant, relation: pfm.relation)
+            guard lastIndex >= 2 else { return }
+            let preObject = objects[lastIndex-2]
+            if let preView = preObject as? View {
+                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+            } else if let preViews = preObject as? [View] {
+                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+            }
+        } else {
+            guard lastIndex >= 1 else { return }
+            let fm = FlexibleMargin(constant: 0, relation: .equal)
+            let preObject = objects[lastIndex-1]
+            if let preView = preObject as? View {
+                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+            } else if let preViews = preObject as? [View] {
+                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+            }
         }
     }
 }
