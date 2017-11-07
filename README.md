@@ -2,11 +2,13 @@
 
 Bricking is Inspired by [Stevia](https://github.com/freshOS/Stevia). The function is similar to Stevia. But supports the following features.
 
-- Supports MacOS
+- Supports macOS
 - Supports [dynamical or conditional layout(issues#53)](https://github.com/freshOS/Stevia/issues/53)
-- Supports topLayoutGuide and bottomLayoutGuide
-- Supports center based layout
+- Supports LayoutGuide
+- Support priority
+- Supports center-based layout
 - Supports view shrink(hide view and compress the space occupied by the view)
+- Supports NSLayoutAnchor equation (iOS 9+)
 - The architecture and code are more clear
 
 
@@ -31,21 +33,113 @@ github "cp3hnu/Bricking"
 
 ## Usage
 
-##### Layout Horizontally
+##### Example
 
-##### Layout Vertically
+```swift
+asv(
+    portraitImgView,
+    idLabel,
+    dateLabel
+)
+        
+layout(
+    15,
+    |-15-portraitImgView.size(30)-idLabel-15-|,
+    10,
+    |-15-dateLabel-15-|,
+    15
+)
+```
+
+#####  Layout dynamically
+
+```swift
+let views = [Any]()
+if isTrue {
+    views += [view1, view2]
+} else {
+    views += [view3, view4]
+}
+asv(views)
+layoutDynamically(views)
+```
 
 ##### LayoutGuide
 
-##### Equation
+```swift
+view.layout(
+    topLayoutGuide,
+    10,
+    |subview1| ~ 50,
+    10,
+    |subview2|,
+    bottomLayoutGuide
+)
+```
 
-##### Percentage
+##### Center-based layout
 
-##### Priority
+```swift
+label1-(>=4)-Bricking.centerX-(>=4)-label2
+
+layout(
+  	|-15-label1-15-|,
+    10,
+    Bricking.centerY,
+    10,
+    |-15-label2-15-|
+)
+```
 
 ##### Shrink
 
-##### Anchor
+```swift
+layout(
+    64,
+    |nameView|,
+    |cityView|,
+    20,
+    |-15-button-15-| ~ 40
+)
+cityView.shrinkVertically = true
+
+is equal to
+cityView.isHidden = true
+layout(
+    64,
+    |nameView|,
+    20,
+    |-15-button-15-| ~ 40
+)
+```
+
+##### Equation
+
+```swift
+label.laTop == 100
+label2.laLeft == label1.laLeft + 20
+label1.laWidth <= 50 % label2.laWidth
+```
+
+##### Priority
+
+```swift
+label.laBottom == 15 !! UILayoutPriorityRequired - 1
+```
+
+##### Percentage
+
+```swift
+label.width(40%)
+```
+
+##### Fill, Center and Align
+
+```swift
+tableView.fillContainer()
+button.centerInContainer()
+alignLefts(label1, label2)
+```
 
 ## Requirements
 
@@ -53,9 +147,9 @@ github "cp3hnu/Bricking"
 
 - Xcode 8.0+
 
-- iOS 9+
+- iOS 8+
 
-
+  ​
 
 
 ## License
