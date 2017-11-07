@@ -33,7 +33,7 @@ github "cp3hnu/Bricking"
 
 ## Usage
 
-##### Example
+#### Example
 
 ```swift
 asv(
@@ -51,7 +51,7 @@ layout(
 )
 ```
 
-#####  Layout dynamically
+#### Layout dynamically
 
 ```swift
 let views = [Any]()
@@ -64,7 +64,7 @@ asv(views)
 layoutDynamically(views)
 ```
 
-##### LayoutGuide
+#### LayoutGuide
 
 ```swift
 view.layout(
@@ -77,7 +77,7 @@ view.layout(
 )
 ```
 
-##### Center-based layout
+#### Center-based layout
 
 ```swift
 label1-(>=4)-Bricking.centerX-(>=4)-label2
@@ -91,7 +91,7 @@ layout(
 )
 ```
 
-##### Shrink
+#### Shrink
 
 ```swift
 layout(
@@ -113,7 +113,7 @@ layout(
 )
 ```
 
-##### Equation
+#### Equation
 
 ```swift
 label.laTop == 100
@@ -121,19 +121,19 @@ label2.laLeft == label1.laLeft + 20
 label1.laWidth <= 50 % label2.laWidth
 ```
 
-##### Priority
+#### Priority
 
 ```swift
 label.laBottom == 15 !! UILayoutPriorityRequired - 1
 ```
 
-##### Percentage
+#### Percentage
 
 ```swift
 label.width(40%)
 ```
 
-##### Fill, Center and Align
+#### Fill, Center and Align
 
 ```swift
 tableView.fillContainer()
