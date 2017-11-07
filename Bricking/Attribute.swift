@@ -1,5 +1,5 @@
 //
-//  Position.swift
+//  Attribute.swift
 //  Bricking
 //
 //  Created by CP3 on 2017/6/30.

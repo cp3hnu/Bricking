@@ -112,11 +112,11 @@ extension View {
                                     anchor2: NSLayoutYAxisAnchor) {
         switch fm.relation {
         case .greaterThanOrEqual:
-            anchor1 >= (anchor2, fm.constant)
+            anchor1 >= anchor2 + fm.constant
         case .lessThanOrEqual:
-            anchor1 <= (anchor2, fm.constant)
+            anchor1 <= anchor2 + fm.constant
         case .equal:
-            anchor1 == (anchor2, fm.constant)
+            anchor1 == anchor2 + fm.constant
         }
     }
     

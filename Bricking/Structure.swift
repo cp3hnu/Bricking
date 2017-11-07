@@ -50,8 +50,8 @@ public enum LayoutConstraintAxis: Int {
 
 public struct CenterXPlaceHolder {}
 public struct CenterYPlaceHolder {}
-public let phCenterX = CenterXPlaceHolder()
-public let phCenterY = CenterYPlaceHolder()
+public let centerX = CenterXPlaceHolder()
+public let centerY = CenterYPlaceHolder()
 
 @available(iOS 9.0, *)
 public class MacLayoutSupport {
@@ -61,13 +61,13 @@ public class MacLayoutSupport {
 }
 
 public struct PriorityAttribute {
-    public var attribute: CPLayoutAttribute
-    public var priority: LayoutPriority
+    public let attribute: CPLayoutAttribute
+    public let priority: LayoutPriority
 }
 
 public struct PriorityConstant {
-    public var constant: CGFloat
-    public var priority: LayoutPriority
+    public let constant: CGFloat
+    public let priority: LayoutPriority
 }
 
 infix operator !! : PriorityPrecedence

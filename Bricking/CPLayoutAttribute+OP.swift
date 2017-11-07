@@ -1,5 +1,5 @@
 //
-//  CPLayoutAttribute+Operator.swift
+//  CPLayoutAttribute+OP.swift
 //  Bricking
 //
 //  Created by CP3 on 2017/7/1.
@@ -8,29 +8,24 @@
 
 import Foundation
 
-// MARK: - +-*/
+// MARK: - +-*/%
 public extension CPLayoutAttribute {
-    @discardableResult
     static public func + (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
         return CPLayoutAttribute(view: left.view, attribute: left.attribute, multiplier: left.multiplier, constant: left.constant + right)
     }
     
-    @discardableResult
     static public func - (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
         return left + (-right)
     }
     
-    @discardableResult
     static public func * (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
         return CPLayoutAttribute(view: left.view, attribute: left.attribute, multiplier: left.multiplier * right, constant:left.constant)
     }
     
-    @discardableResult
     static public func / (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
         return left * (1.0/right)
     }
     
-    @discardableResult
     static public func % (left: CGFloat, right: CPLayoutAttribute) -> CPLayoutAttribute {
         return right * (left/100.0)
     }

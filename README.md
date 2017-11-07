@@ -29,12 +29,23 @@ github "cp3hnu/Bricking"
 - Add Input files *$(SRCROOT)/Carthage/Build/iOS/Bricking.framework*
 
 
-
 ## Usage
 
- Similar to Stevia
+##### Layout Horizontally
 
+##### Layout Vertically
 
+##### LayoutGuide
+
+##### Equation
+
+##### Percentage
+
+##### Priority
+
+##### Shrink
+
+##### Anchor
 
 ## Requirements
 
