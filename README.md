@@ -83,7 +83,7 @@ view.layout(
 label1-(>=4)-Bricking.centerX-(>=4)-label2
 
 layout(
-  	|-15-label1-15-|,
+    |-15-label1-15-|,
     10,
     Bricking.centerY,
     10,
