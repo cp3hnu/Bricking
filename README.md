@@ -1,5 +1,5 @@
 <p align="center"> 
-![](bricking.jpg)
+<img src="bricking.jpg">
 </p>
 
 
