@@ -1,5 +1,5 @@
 <p align="center"> 
-<img src="bricking.jpg">
+<img src="https://raw.githubusercontent.com/onevcat/Kingfisher/master/bricking.jpg">
 </p>
 
 
