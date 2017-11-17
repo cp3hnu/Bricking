@@ -1,6 +1,10 @@
-# Bricking
+<p align="center"> 
+![](bricking.jpg)
+</p>
 
-Bricking is Inspired by [Stevia](https://github.com/freshOS/Stevia). The function is similar to Stevia. But supports the following features.
+
+
+**Bricking** is Inspired by [Stevia](https://github.com/freshOS/Stevia). The function is similar to Stevia. But supports the following features.
 
 - Supports macOS
 - Supports [dynamical or conditional layout(issues#53)](https://github.com/freshOS/Stevia/issues/53)
