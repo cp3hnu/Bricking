@@ -1,5 +1,5 @@
 <p align="center"> 
-<img src="https://raw.githubusercontent.com/cp3hnu/Bricking/master/Bricking.jpg">
+<img src="https://raw.githubusercontent.com/cp3hnu/Bricking/master/Bricking.jpg", width="301">
 </p>
 
 
