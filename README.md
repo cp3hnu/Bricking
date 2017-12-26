@@ -147,9 +147,9 @@ alignLefts(label1, label2)
 
 ## Requirements
 
-- Swift 3.0+
+- Swift 4.0+
 
-- Xcode 8.0+
+- Xcode 9.0+
 
 - iOS 8+
 
