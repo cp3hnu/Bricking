@@ -85,7 +85,7 @@ public func alignAllEdges(_ views: [View]) {
     alignTopAndBottoms(views)
 }
 
-private func align(_ attribute: NSLayoutAttribute, views: [View]) {
+private func align(_ attribute: LayoutAttribute, views: [View]) {
     guard views.count > 1 else { return }
     var preView = views[0]
     for v in views[1..<views.endIndex] {
@@ -94,7 +94,7 @@ private func align(_ attribute: NSLayoutAttribute, views: [View]) {
     }
 }
 
-private func align(_ attribute: NSLayoutAttribute, v1: View, with v2: View) {
+private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
     switch attribute {
     case .left:
         v1.laLeft == v2.laLeft

@@ -63,7 +63,7 @@ public extension CPLayoutAttribute {
         return relativeToSuperView(left: left, relation: .lessThanOrEqual, right: right.constant, priority: right.priority)
     }
     
-    static private func relativeToSuperView(left: CPLayoutAttribute, relation: NSLayoutRelation, right: CGFloat, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
+    static private func relativeToSuperView(left: CPLayoutAttribute, relation: LayoutRelation, right: CGFloat, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
         let attribute = left.attribute
         var superview = left.view.superview
         if superview == nil && attribute != .width && attribute != .height  {
@@ -124,7 +124,7 @@ public extension CPLayoutAttribute {
         return relativeToAttribute(left: left, relation: .lessThanOrEqual, right: right.attribute, priority: right.priority)
     }
     
-    static private func relativeToAttribute(left: CPLayoutAttribute, relation: NSLayoutRelation, right: CPLayoutAttribute, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
+    static private func relativeToAttribute(left: CPLayoutAttribute, relation: LayoutRelation, right: CPLayoutAttribute, priority: LayoutPriority = LayoutPriorityRequired) -> NSLayoutConstraint? {
         guard let _ = closestCommonAncestor(left.view, right.view) else { return nil }
         let constraint = NSLayoutConstraint(item: left.view,
                                             attribute: left.attribute,

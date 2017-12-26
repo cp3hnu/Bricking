@@ -12,13 +12,18 @@ import Foundation
     public typealias View = UIView
     public typealias LayoutSupport = UILayoutSupport
     public typealias LayoutPriority = UILayoutPriority
-    public let LayoutPriorityRequired = UILayoutPriorityRequired
+    public typealias LayoutRelation = NSLayoutRelation
+    public typealias LayoutAttribute = NSLayoutAttribute
+    public let LayoutPriorityRequired = UILayoutPriority.required
+    
 #elseif os(OSX)
     import AppKit
     public typealias View = NSView
     public typealias LayoutSupport = MacLayoutSupport
-    public typealias LayoutPriority = NSLayoutPriority
-    public let LayoutPriorityRequired = NSLayoutPriorityRequired
+    public typealias LayoutPriority = NSLayoutConstraint.Priority
+    public typealias LayoutRelation = NSLayoutConstraint.Relation
+    public typealias LayoutAttribute = NSLayoutConstraint.Attribute
+    public let LayoutPriorityRequired = NSLayoutConstraint.Priority.required
 #endif
 
 extension View {
@@ -27,7 +32,7 @@ extension View {
         return asv(subViews)
     }
     
-    @discardableResult
+    @objc @discardableResult
     open func asv(_ subViews: [View]) -> View {
         subViews.forEach{
             addSubview($0)

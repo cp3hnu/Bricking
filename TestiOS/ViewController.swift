@@ -59,7 +59,7 @@ class SecondCtrlr: UIViewController {
         //print("XXXX")
     }
     
-    func tap() {
+    @objc func tap() {
         
     }
 }

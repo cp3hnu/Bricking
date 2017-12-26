@@ -42,7 +42,7 @@ extension View {
         return constraintFor(attribute: .centerY)
     }
     
-    private func constraintFor(attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+    private func constraintFor(attribute: LayoutAttribute) -> NSLayoutConstraint? {
         if attribute == .width || attribute == .height {
             return constraintFor(attribute: attribute, targets: [self, superview].flatMap({return $0}))
         } else {
@@ -50,7 +50,7 @@ extension View {
         }
     }
     
-    private func constraintFor(attribute: NSLayoutAttribute, targets: [View]) -> NSLayoutConstraint? {
+    private func constraintFor(attribute: LayoutAttribute, targets: [View]) -> NSLayoutConstraint? {
         for target in targets {
             for c in target.constraints {
                 if let fi = c.firstItem as? View, fi == self && c.firstAttribute == attribute {
@@ -68,7 +68,7 @@ extension View {
 
 // MARK: - multiple Constraints
 extension View {
-    public func constraintsFor(attribute: NSLayoutAttribute) -> [NSLayoutConstraint] {
+    public func constraintsFor(attribute: LayoutAttribute) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         for target in [superview, self].flatMap({return $0}) {
             for c in target.constraints {

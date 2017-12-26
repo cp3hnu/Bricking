@@ -43,7 +43,7 @@ public func equalHeights(_ views: [View]) -> [View] {
     return views
 }
 
-private func equal(_ attribute: NSLayoutAttribute, views: [View]) {
+private func equal(_ attribute: LayoutAttribute, views: [View]) {
     guard views.count > 1 else { return }
     var preView = views[0]
     for v in views[1..<views.endIndex] {

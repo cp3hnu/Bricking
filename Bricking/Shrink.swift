@@ -149,12 +149,12 @@ extension View {
         self.currentConstraint!.isActive = true
     }
     
-    private func constraintFor(_ attribute: NSLayoutAttribute) -> (View?, NSLayoutConstraint?, NSLayoutAttribute?, constant: CGFloat) {
+    private func constraintFor(_ attribute: LayoutAttribute) -> (View?, NSLayoutConstraint?, LayoutAttribute?, constant: CGFloat) {
         if let spv = superview {
             for c in spv.constraints {
                 if let fi = c.firstItem as? View, fi == self && c.firstAttribute == attribute {
                     var constant = c.constant
-                    if attribute == NSLayoutAttribute.left || attribute == NSLayoutAttribute.top {
+                    if attribute == LayoutAttribute.left || attribute == LayoutAttribute.top {
                         constant = -c.constant
                     }
                     return (c.secondItem as? View, c, c.secondAttribute, constant)
@@ -162,7 +162,7 @@ extension View {
                 
                 if let si = c.secondItem as? View, si == self && c.secondAttribute == attribute {
                     var constant = c.constant
-                    if attribute == NSLayoutAttribute.right || attribute == NSLayoutAttribute.bottom {
+                    if attribute == LayoutAttribute.right || attribute == LayoutAttribute.bottom {
                         constant = -c.constant
                     }
                     return (c.firstItem as? View, c, c.firstAttribute, constant)

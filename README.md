@@ -6,10 +6,10 @@
 
 **Bricking** is Inspired by [Stevia](https://github.com/freshOS/Stevia). The function is similar to Stevia. But supports the following features.
 
-- Supports macOS
+- Supports iOS and macOS
 - Supports [dynamical or conditional layout(issues#53)](https://github.com/freshOS/Stevia/issues/53)
 - Supports LayoutGuide
-- Support priority
+- Support setting priority
 - Supports center-based layout
 - Supports view shrink(hide view and compress the space occupied by the view)
 - Supports NSLayoutAnchor equation (iOS 9+)

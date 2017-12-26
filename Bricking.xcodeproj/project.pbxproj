@@ -47,6 +47,8 @@
 		DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
 		DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
 		DB626B021FB17FFE002D2ACE /* NSLayoutDimension+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */; };
+		DB7725DC1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */; };
+		DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */; };
 		DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
 		DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,7 @@
 		DB40F6091F3D4EDE00CEC4DD /* Bricking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bricking.h; sourceTree = "<group>"; };
 		DB40F6111F3D60AF00CEC4DD /* Shrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shrink.swift; sourceTree = "<group>"; };
 		DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+OP.swift"; sourceTree = "<group>"; };
+		DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Priority+OP.swift"; sourceTree = "<group>"; };
 		DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +189,7 @@
 				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
 				DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */,
 				DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */,
+				DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */,
 			);
 			path = Bricking;
 			sourceTree = "<group>";
@@ -274,7 +278,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = CP3;
 				TargetAttributes = {
 					DB1286171F7959640067EE77 = {
@@ -363,6 +367,7 @@
 				DB40F5F51F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
 				DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */,
 				DB40F5E51F3D49FB00CEC4DD /* Center.swift in Sources */,
+				DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
 				DB40F5E91F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift in Sources */,
 				DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */,
 				DB40F5EF1F3D49FB00CEC4DD /* Fill.swift in Sources */,
@@ -381,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB40F5FA1F3D49FB00CEC4DD /* Structure.swift in Sources */,
+				DB7725DC1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
 				DB40F5E41F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F81F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB40F5F61F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
@@ -440,7 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -455,7 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -470,7 +476,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -478,7 +486,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -524,7 +536,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -532,7 +546,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -582,7 +600,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -606,7 +624,7 @@
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -628,7 +646,7 @@
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -649,7 +667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -10,11 +10,11 @@ import Foundation
 
 public struct CPLayoutAttribute {
     let view: View
-    let attribute: NSLayoutAttribute
+    let attribute: LayoutAttribute
     let constant: CGFloat
     let multiplier: CGFloat
     
-    init(view: View, attribute: NSLayoutAttribute, multiplier: CGFloat = 1.0, constant: CGFloat = 0.0) {
+    init(view: View, attribute: LayoutAttribute, multiplier: CGFloat = 1.0, constant: CGFloat = 0.0) {
         self.view = view
         self.attribute = attribute
         self.constant = constant

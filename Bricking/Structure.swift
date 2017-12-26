@@ -14,7 +14,7 @@ public struct SideConstraint {
 
 public struct FlexibleMargin {
     public let constant: CGFloat
-    public let relation: NSLayoutRelation
+    public let relation: LayoutRelation
 }
 
 public struct PartialFlexibleConstraint {
