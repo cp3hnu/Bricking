@@ -29,20 +29,38 @@ extension View {
     }
 }
 
-public func centerHorizontally(_ views: View...) {
-    centerHorizontally(views)
+@discardableResult
+public func centerHorizontally(_ views: View...) -> [View] {
+    return centerHorizontally(views)
 }
 
-public func centerHorizontally(_ views: [View]) {
+@discardableResult
+public func centerHorizontally(_ views: [View]) -> [View]  {
     views.first?.centerHorizontally()
     alignVertically(views)
+    return views
 }
 
-public func centerVertically(_ views: View...) {
-    centerVertically(views)
+@discardableResult
+public func centerVertically(_ views: View...) -> [View]  {
+    return centerVertically(views)
 }
 
-public func centerVertically(_ views: [View]) {
+@discardableResult
+public func centerVertically(_ views: [View]) -> [View]  {
     views.first?.centerVertically()
     alignHorizontally(views)
+    return views
+}
+
+extension Array where Element == View {
+    @discardableResult
+    public func centerHorizontally() -> Array {
+        return Bricking.centerHorizontally(self)
+    }
+    
+    @discardableResult
+    public func centerVertically() -> Array {
+        return Bricking.centerVertically(self)
+    }
 }

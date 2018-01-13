@@ -140,7 +140,11 @@ extension View {
             }
             flexibleMargin = nil
         } else {
-            guard index >= 1 else { return }
+            guard index >= 1 else {
+                view.top(0)
+                return
+            }
+            
             let fm = FlexibleMargin(constant: 0, relation: .equal)
             let preObject = objects[index-1]
             if let preView = preObject as? View {

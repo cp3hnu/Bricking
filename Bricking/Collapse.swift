@@ -1,5 +1,5 @@
 //
-//  Shrink.swift
+//  Collapse.swift
 //  Bricking
 //
 //  Created by CP3 on 17/4/12.
@@ -65,7 +65,7 @@ extension View {
         }
     }
     
-    public var shrinkVertically: Bool {
+    public var collapseVertically: Bool {
         get {
             return isHidden
         }
@@ -81,7 +81,7 @@ extension View {
         }
     }
     
-    public var shrinkHorizontally: Bool {
+    public var collapseHorizontally: Bool {
         get {
             return isHidden
         }

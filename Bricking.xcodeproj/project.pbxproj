@@ -44,9 +44,11 @@
 		DB40F5FC1F3D49FB00CEC4DD /* Vertically.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */; };
 		DB40F60A1F3D4EDE00CEC4DD /* Bricking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB40F6091F3D4EDE00CEC4DD /* Bricking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB40F60E1F3D510600CEC4DD /* Bricking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB40F6091F3D4EDE00CEC4DD /* Bricking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
-		DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Shrink.swift */; };
+		DB40F6121F3D60AF00CEC4DD /* Collapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Collapse.swift */; };
+		DB40F6131F3D60AF00CEC4DD /* Collapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F6111F3D60AF00CEC4DD /* Collapse.swift */; };
+		DB56ED6520036FAF00FB7824 /* CenterTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56ED6420036FAF00FB7824 /* CenterTogether.swift */; };
 		DB626B021FB17FFE002D2ACE /* NSLayoutDimension+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */; };
+		DB73B3E420035A6A00332E72 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB73B3E320035A6A00332E72 /* Grid.swift */; };
 		DB7725DC1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */; };
 		DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */; };
 		DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
@@ -103,8 +105,10 @@
 		DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertically.swift; sourceTree = "<group>"; };
 		DB40F5FE1F3D4A9F00CEC4DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB40F6091F3D4EDE00CEC4DD /* Bricking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bricking.h; sourceTree = "<group>"; };
-		DB40F6111F3D60AF00CEC4DD /* Shrink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shrink.swift; sourceTree = "<group>"; };
+		DB40F6111F3D60AF00CEC4DD /* Collapse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collapse.swift; sourceTree = "<group>"; };
+		DB56ED6420036FAF00FB7824 /* CenterTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTogether.swift; sourceTree = "<group>"; };
 		DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+OP.swift"; sourceTree = "<group>"; };
+		DB73B3E320035A6A00332E72 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Priority+OP.swift"; sourceTree = "<group>"; };
 		DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,11 +189,13 @@
 				DB40F5DB1F3D49FB00CEC4DD /* GetConstraint.swift */,
 				DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */,
 				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
-				DB40F6111F3D60AF00CEC4DD /* Shrink.swift */,
+				DB40F6111F3D60AF00CEC4DD /* Collapse.swift */,
 				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
 				DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */,
 				DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */,
 				DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */,
+				DB73B3E320035A6A00332E72 /* Grid.swift */,
+				DB56ED6420036FAF00FB7824 /* CenterTogether.swift */,
 			);
 			path = Bricking;
 			sourceTree = "<group>";
@@ -365,7 +371,7 @@
 				DB40F5E31F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F71F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB40F5F51F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
-				DB40F6131F3D60AF00CEC4DD /* Shrink.swift in Sources */,
+				DB40F6131F3D60AF00CEC4DD /* Collapse.swift in Sources */,
 				DB40F5E51F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
 				DB40F5E91F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift in Sources */,
@@ -390,7 +396,7 @@
 				DB40F5E41F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F81F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB40F5F61F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
-				DB40F6121F3D60AF00CEC4DD /* Shrink.swift in Sources */,
+				DB40F6121F3D60AF00CEC4DD /* Collapse.swift in Sources */,
 				DB40F5E61F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB40F5EA1F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift in Sources */,
 				DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */,
@@ -399,6 +405,8 @@
 				DB40F5FC1F3D49FB00CEC4DD /* Vertically.swift in Sources */,
 				DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5EE1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
+				DB56ED6520036FAF00FB7824 /* CenterTogether.swift in Sources */,
+				DB73B3E420035A6A00332E72 /* Grid.swift in Sources */,
 				DB40F5EC1F3D49FB00CEC4DD /* DoubleDash.swift in Sources */,
 				DB40F5E81F3D49FB00CEC4DD /* CPLayoutAttribute.swift in Sources */,
 				DB40F5F21F3D49FB00CEC4DD /* GetConstraint.swift in Sources */,

@@ -9,80 +9,107 @@
 import Foundation
 
 // MARK: - Center
-public func alignHorizontally(_ views: View...) {
-    alignHorizontally(views)
+@discardableResult
+public func alignHorizontally(_ views: View...) -> [View] {
+    return alignHorizontally(views)
 }
 
-public func alignHorizontally(_ views: [View]) {
+@discardableResult
+public func alignHorizontally(_ views: [View]) -> [View] {
     align(.centerY, views: views)
+    return views
 }
 
-public func alignVertically(_ views: View...) {
-    alignVertically(views)
+@discardableResult
+public func alignVertically(_ views: View...) -> [View] {
+    return alignVertically(views)
 }
 
-public func alignVertically(_ views: [View]) {
+@discardableResult
+public func alignVertically(_ views: [View]) -> [View] {
     align(.centerX, views: views)
+    return views
 }
 
 // MARK: - Margin
-public func alignLefts(_ views: View...) {
-    alignLefts(views)
+@discardableResult
+public func alignLefts(_ views: View...) -> [View] {
+    return alignLefts(views)
 }
 
-public func alignLefts(_ views: [View]) {
+@discardableResult
+public func alignLefts(_ views: [View]) -> [View] {
     align(.left, views: views)
+    return views
 }
 
-public func alignRights(_ views: View...) {
-    alignRights(views)
+@discardableResult
+public func alignRights(_ views: View...) -> [View] {
+    return alignRights(views)
 }
 
-public func alignRights(_ views: [View]) {
+@discardableResult
+public func alignRights(_ views: [View]) -> [View] {
     align(.right, views: views)
+    return views
 }
 
-public func alignTops(_ views: View...) {
-    alignTops(views)
+@discardableResult
+public func alignTops(_ views: View...) -> [View] {
+    return alignTops(views)
 }
 
-public func alignTops(_ views: [View]) {
+@discardableResult
+public func alignTops(_ views: [View]) -> [View] {
     align(.top, views: views)
+    return views
 }
 
-public func alignBottoms(_ views: View...) {
-    alignBottoms(views)
+@discardableResult
+public func alignBottoms(_ views: View...) -> [View] {
+    return alignBottoms(views)
 }
 
-public func alignBottoms(_ views: [View]) {
+@discardableResult
+public func alignBottoms(_ views: [View]) -> [View] {
     align(.bottom, views: views)
+    return views
 }
 
-public func alignLeftAndRights(_ views: View...) {
-    alignLeftAndRights(views)
+@discardableResult
+public func alignLeftAndRights(_ views: View...) -> [View] {
+    return alignLeftAndRights(views)
 }
 
-public func alignLeftAndRights(_ views: [View]) {
+@discardableResult
+public func alignLeftAndRights(_ views: [View]) -> [View] {
     alignLefts(views)
     alignRights(views)
+    return views
 }
 
-public func alignTopAndBottoms(_ views: View...) {
-    alignTopAndBottoms(views)
+@discardableResult
+public func alignTopAndBottoms(_ views: View...) -> [View] {
+    return alignTopAndBottoms(views)
 }
 
-public func alignTopAndBottoms(_ views: [View]) {
+@discardableResult
+public func alignTopAndBottoms(_ views: [View]) -> [View] {
     alignTops(views)
     alignBottoms(views)
+    return views
 }
 
-public func alignAllEdges(_ views: View...) {
-    alignAllEdges(views)
+@discardableResult
+public func alignAllEdges(_ views: View...) -> [View] {
+    return alignAllEdges(views)
 }
 
-public func alignAllEdges(_ views: [View]) {
+@discardableResult
+public func alignAllEdges(_ views: [View]) -> [View] {
     alignLeftAndRights(views)
     alignTopAndBottoms(views)
+    return views
 }
 
 private func align(_ attribute: LayoutAttribute, views: [View]) {
@@ -110,5 +137,37 @@ private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
         v1.laCenterY == v2.laCenterY
     default:
         break
+    }
+}
+
+extension Array where Element == View {
+    @discardableResult
+    public func alignLefts() -> Array {
+        return Bricking.alignLefts(self)
+    }
+    
+    @discardableResult
+    public func alignRights() -> Array {
+        return Bricking.alignRights(self)
+    }
+    
+    @discardableResult
+    public func alignTops() -> Array {
+        return Bricking.alignTops(self)
+    }
+    
+    @discardableResult
+    public func alignBottoms() -> Array {
+        return Bricking.alignBottoms(self)
+    }
+    
+    @discardableResult
+    public func alignHorizontally() -> Array {
+        return Bricking.alignHorizontally(self)
+    }
+    
+    @discardableResult
+    public func alignVertically() -> Array {
+        return Bricking.alignVertically(self)
     }
 }

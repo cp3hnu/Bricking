@@ -20,7 +20,6 @@ public func equalSizes(_ views: [View]) -> [View] {
     return views
 }
 
-
 @discardableResult
 public func equalWidths(_ views: View...) -> [View] {
     return equalWidths(views)
@@ -61,6 +60,23 @@ extension View {
     public func heightEqualsWidth() -> Self {
         self.laWidth == self.laHeight
         return self
+    }
+}
+
+extension Array where Element == View {
+    @discardableResult
+    public func equalWidths() -> Array {
+        return Bricking.equalWidths(self)
+    }
+    
+    @discardableResult
+    public func equalHeights() -> Array {
+        return Bricking.equalHeights(self)
+    }
+    
+    @discardableResult
+    public func equalSizes() -> Array {
+        return Bricking.equalSizes(self)
     }
 }
 
