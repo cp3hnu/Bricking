@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension Array where Element == UIView {
+extension Array where Element: UIView {
     public func grid(numberOfLine: Int, edgeInsets: UIEdgeInsets = UIEdgeInsets.zero, hSpace: CGFloat = 0, vSpace: CGFloat = 0) {
         
         guard count > 0 else { return }

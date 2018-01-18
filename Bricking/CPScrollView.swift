@@ -12,13 +12,32 @@ import UIKit
 open class CPScrollView: UIScrollView {
     public let containerView = UIView()
     
-    override init(frame: CGRect) {
+    public var isWidthEqual: Bool = false {
+        didSet {
+            if isWidthEqual {
+                equalWidths(self, containerView)
+            } else {
+                containerView.widthConstraint?.isActive = false
+            }
+        }
+    }
+    
+    public var isHeightEqual: Bool = false {
+        didSet {
+            if isHeightEqual {
+                equalHeights(self, containerView)
+            } else {
+                containerView.heightConstraint?.isActive = false
+            }
+        }
+    }
+    
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.fillContainer()
-        equalWidths(self, containerView)
     }
     
     required public init?(coder aDecoder: NSCoder) {

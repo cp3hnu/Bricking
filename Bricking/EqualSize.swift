@@ -63,19 +63,19 @@ extension View {
     }
 }
 
-extension Array where Element == View {
+extension Array where Element: View {
     @discardableResult
-    public func equalWidths() -> Array {
+    public func equalWidths() -> Array<View> {
         return Bricking.equalWidths(self)
     }
     
     @discardableResult
-    public func equalHeights() -> Array {
+    public func equalHeights() -> Array<View> {
         return Bricking.equalHeights(self)
     }
     
     @discardableResult
-    public func equalSizes() -> Array {
+    public func equalSizes() -> Array<View> {
         return Bricking.equalSizes(self)
     }
 }

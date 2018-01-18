@@ -53,14 +53,14 @@ public func centerVertically(_ views: [View]) -> [View]  {
     return views
 }
 
-extension Array where Element == View {
+extension Array where Element: View {
     @discardableResult
-    public func centerHorizontally() -> Array {
+    public func centerHorizontally() -> Array<View> {
         return Bricking.centerHorizontally(self)
     }
     
     @discardableResult
-    public func centerVertically() -> Array {
+    public func centerVertically() -> Array<View> {
         return Bricking.centerVertically(self)
     }
 }

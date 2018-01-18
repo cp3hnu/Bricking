@@ -140,34 +140,34 @@ private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
     }
 }
 
-extension Array where Element == View {
+extension Array where Element: View {
     @discardableResult
-    public func alignLefts() -> Array {
+    public func alignLefts() -> Array<View> {
         return Bricking.alignLefts(self)
     }
     
     @discardableResult
-    public func alignRights() -> Array {
+    public func alignRights() -> Array<View> {
         return Bricking.alignRights(self)
     }
     
     @discardableResult
-    public func alignTops() -> Array {
+    public func alignTops() -> Array<View> {
         return Bricking.alignTops(self)
     }
     
     @discardableResult
-    public func alignBottoms() -> Array {
+    public func alignBottoms() -> Array<View> {
         return Bricking.alignBottoms(self)
     }
     
     @discardableResult
-    public func alignHorizontally() -> Array {
+    public func alignHorizontally() -> Array<View> {
         return Bricking.alignHorizontally(self)
     }
     
     @discardableResult
-    public func alignVertically() -> Array {
+    public func alignVertically() -> Array<View> {
         return Bricking.alignVertically(self)
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Array where Element == UIView {
+extension Array where Element: UIView {
     @discardableResult
     public func togetherCenterHorizontally() -> UIView {
         let wrappedView = UIView()
