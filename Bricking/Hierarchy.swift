@@ -14,6 +14,7 @@ import Foundation
     public typealias LayoutPriority = UILayoutPriority
     public typealias LayoutRelation = NSLayoutRelation
     public typealias LayoutAttribute = NSLayoutAttribute
+    public typealias EdgeInsets = UIEdgeInsets
     public let LayoutPriorityRequired = UILayoutPriority.required
     
 #elseif os(OSX)
@@ -23,6 +24,7 @@ import Foundation
     public typealias LayoutPriority = NSLayoutConstraint.Priority
     public typealias LayoutRelation = NSLayoutConstraint.Relation
     public typealias LayoutAttribute = NSLayoutConstraint.Attribute
+    public typealias EdgeInsets = NSEdgeInsets
     public let LayoutPriorityRequired = NSLayoutConstraint.Priority.required
 #endif
 

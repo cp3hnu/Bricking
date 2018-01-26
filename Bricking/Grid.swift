@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
-extension Array where Element: UIView {
-    public func grid(numberOfLine: Int, edgeInsets: UIEdgeInsets = UIEdgeInsets.zero, hSpace: CGFloat = 0, vSpace: CGFloat = 0) {
+extension Array where Element: View {
+    public func grid(numberOfLine: Int, edgeInsets: EdgeInsets = EdgeInsets(top: 0, left: 0, bottom: 0, right: 0), hSpace: CGFloat = 0, vSpace: CGFloat = 0) {
         
         guard count > 0 else { return }
         guard let superView = self.first!.superview else {

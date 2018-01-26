@@ -8,10 +8,11 @@
 
 import Foundation
 
-extension Array where Element: UIView {
+// MARK: - Center together
+extension Array where Element: View {
     @discardableResult
-    public func togetherCenterHorizontally() -> UIView {
-        let wrappedView = UIView()
+    public func togetherCenterHorizontally() -> View {
+        let wrappedView = View()
         guard self.count > 0 else { return wrappedView }
         
         var spaces = [CGFloat]()
@@ -35,5 +36,23 @@ extension Array where Element: UIView {
         }
         
         return wrappedView
+    }
+}
+
+// MARK: - Line horizontally
+extension Array where Element: View {
+    @discardableResult
+    func lineHorizontally(space: CGFloat = 0, left: CGFloat = 0, right: CGFloat = 0) -> Array {
+        guard count > 0 else { return self }
+        
+        var preView = first!
+        preView.left(left)
+        last!.right(right)
+        dropFirst().forEach {
+            preView-space-$0
+            preView = $0
+        }
+        
+        return self
     }
 }
