@@ -44,9 +44,9 @@ extension View {
     
     private func constraintFor(attribute: LayoutAttribute) -> NSLayoutConstraint? {
         if attribute == .width || attribute == .height {
-            return constraintFor(attribute: attribute, targets: [self, superview].flatMap({return $0}))
+            return constraintFor(attribute: attribute, targets: [self, superview].compactMap({return $0}))
         } else {
-            return constraintFor(attribute: attribute, targets: [superview, self].flatMap({return $0}))
+            return constraintFor(attribute: attribute, targets: [superview, self].compactMap({return $0}))
         }
     }
     
@@ -70,7 +70,7 @@ extension View {
 extension View {
     public func constraintsFor(attribute: LayoutAttribute) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
-        for target in [superview, self].flatMap({return $0}) {
+        for target in [superview, self].compactMap({return $0}) {
             for c in target.constraints {
                 if let fi = c.firstItem as? View, fi == self && c.firstAttribute == attribute {
                     constraints.append(c)

@@ -78,7 +78,7 @@ extension View {
             bottomAnchorConstraints(objects: objects, flexibleMargin: previousFlexibleMargin)
         }
         
-        return objects.map {$0 as? View }.flatMap {$0}
+        return objects.map {$0 as? View }.compactMap {$0}
     }
     
     private func convertToCGFloat(_ number: Any) -> CGFloat {

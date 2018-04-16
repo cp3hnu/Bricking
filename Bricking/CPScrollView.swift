@@ -44,8 +44,10 @@ open class CPScrollView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @discardableResult
     override open func asv(_ subViews: [UIView]) -> UIView {
-        return containerView.asv(subViews)
+        containerView.asv(subViews)
+        return self
     }
 }
 #endif

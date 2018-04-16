@@ -18,7 +18,7 @@ extension Array where Element: View {
         
         self.equalWidths()
         if count < numberOfLine {
-            self.first!.width((100.0/CGFloat(count))%)
+            self.first!.width((100.0/CGFloat(numberOfLine))%)
         }
         
         self.first!.top(edgeInsets.top).left(edgeInsets.left)

@@ -37,13 +37,8 @@ class SecondCtrlr: UIViewController {
         label.numberOfLines = 0
         label.text = "zhaowei"
         
-        
         view.asv(imageView, label)
         (imageView.size(30)-label).togetherCenterHorizontally().top(100)
-        
-
-        
-        
         
         /*
         let view1 = UIView()

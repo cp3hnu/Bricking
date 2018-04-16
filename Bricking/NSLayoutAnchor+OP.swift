@@ -9,12 +9,6 @@
 import Foundation
 
 @available(iOS 9.0, *)
-public struct PriorityAnchor<AnchorType> where AnchorType : AnyObject {
-    let anchor: CPLayoutAnchor<AnchorType>
-    let priority: LayoutPriority
-}
-
-@available(iOS 9.0, *)
 public struct CPLayoutAnchor<AnchorType> where AnchorType : AnyObject {
     let anchor: NSLayoutAnchor<AnchorType>
     let constant: CGFloat
@@ -24,7 +18,13 @@ public struct CPLayoutAnchor<AnchorType> where AnchorType : AnyObject {
     }
 }
 
-// MARK: - +-
+@available(iOS 9.0, *)
+public struct PriorityAnchor<AnchorType> where AnchorType : AnyObject {
+    let anchor: CPLayoutAnchor<AnchorType>
+    let priority: LayoutPriority
+}
+
+// MARK: - NSLayoutAnchor => CPLayoutAnchor
 @available(iOS 9.0, *)
 public func + <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: CGFloat) -> CPLayoutAnchor<AnchorType> {
     return CPLayoutAnchor(anchor: left, constant: right)
@@ -33,6 +33,25 @@ public func + <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: CGFloat) ->
 @available(iOS 9.0, *)
 public func - <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: CGFloat) -> CPLayoutAnchor<AnchorType> {
     return left + (-right)
+}
+
+// MARK: - NSLayoutAnchor
+@available(iOS 9.0, *)
+@discardableResult
+public func == <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
+    return left == CPLayoutAnchor(anchor: right, constant: 0)
+}
+
+@available(iOS 9.0, *)
+@discardableResult
+public func >= <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
+    return left >= CPLayoutAnchor(anchor: right, constant: 0)
+}
+
+@available(iOS 9.0, *)
+@discardableResult
+public func <= <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
+    return left <= CPLayoutAnchor(anchor: right, constant: 0)
 }
 
 // MARK: - CPLayoutAnchor
@@ -60,26 +79,7 @@ public func <= <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: CPLayoutAn
     return constraint
 }
 
-// MARK: - NSLayoutAnchor
-@available(iOS 9.0, *)
-@discardableResult
-public func == <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
-    return left == CPLayoutAnchor(anchor: right, constant: 0)
-}
-
-@available(iOS 9.0, *)
-@discardableResult
-public func >= <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
-    return left >= CPLayoutAnchor(anchor: right, constant: 0)
-}
-
-@available(iOS 9.0, *)
-@discardableResult
-public func <= <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: NSLayoutAnchor<AnchorType>) -> NSLayoutConstraint {
-    return left <= CPLayoutAnchor(anchor: right, constant: 0)
-}
-
-// MARK: - Priority
+// MARK: - PriorityAnchor
 @available(iOS 9.0, *)
 @discardableResult
 public func == <AnchorType> (left: NSLayoutAnchor<AnchorType>, right: PriorityAnchor<AnchorType>) -> NSLayoutConstraint {
