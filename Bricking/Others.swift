@@ -11,10 +11,10 @@ import Foundation
 // MARK: - Center together
 extension Array where Element: View {
     @discardableResult
-    public func togetherCenterHorizontally() -> View {
-        let wrappedView = View()
-        guard self.count > 0 else { return wrappedView }
+    public func centerTogetherHorizontally() -> View {
+        guard self.count > 0 else { return View() }
         
+        let wrappedView = View()
         var spaces = [CGFloat]()
         for itemView in self.dropFirst() {
             let space: CGFloat = itemView.leftConstraint?.constant ?? 0
@@ -22,12 +22,13 @@ extension Array where Element: View {
         }
         
         self.first?.superview?.asv(wrappedView)
+        wrappedView.centerHorizontally()
+        
         self.forEach { $0.removeFromSuperview()}
         wrappedView.asv(self)
-        var preView = self.first!
-        
-        wrappedView.centerHorizontally()
         self.alignHorizontally()
+        
+        var preView = self.first!
         self.first?.left(0).fillVertically()
         self.last?.right(0)
         for (idx, space) in spaces.enumerated() {
@@ -42,7 +43,7 @@ extension Array where Element: View {
 // MARK: - Line horizontally
 extension Array where Element: View {
     @discardableResult
-    func lineHorizontally(space: CGFloat = 0, left: CGFloat = 0, right: CGFloat = 0) -> Array {
+    public func linearFixedSpace(space: CGFloat = 0, left: CGFloat = 0, right: CGFloat = 0) -> Array {
         guard count > 0 else { return self }
         
         var preView = first!
@@ -54,5 +55,26 @@ extension Array where Element: View {
         }
         
         return self
+    }
+    
+    @discardableResult
+    public func linearEqualSpace(left: CGFloat = 0, right: CGFloat = 0) -> [View] {
+        guard count > 0 else { return self }
+        
+        let spaceViews = (0..<count-1).map { _ in return View() }
+        
+        first!.superview?.asv(spaceViews)
+        first!.left(left)
+        last!.right(right)
+        for (idx, spaceView) in spaceViews.enumerated() {
+            let item = self[idx]
+            let nextItem = self[idx+1]
+            item-0-spaceView-0-nextItem
+        }
+        spaceViews.equalWidths()
+        
+        var array: [View] = self
+        array += spaceViews
+        return array
     }
 }
