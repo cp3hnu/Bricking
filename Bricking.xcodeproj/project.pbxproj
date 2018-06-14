@@ -14,6 +14,9 @@
 		DB1286251F7959650067EE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1286231F7959650067EE77 /* LaunchScreen.storyboard */; };
 		DB12862A1F795A4A0067EE77 /* Bricking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB40F5CA1F3D492900CEC4DD /* Bricking.framework */; };
 		DB12862B1F795A4A0067EE77 /* Bricking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB40F5CA1F3D492900CEC4DD /* Bricking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB16111020D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */; };
+		DB16111220D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */; };
+		DB16111420D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */; };
 		DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E31F3D49FB00CEC4DD /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D41F3D49FB00CEC4DD /* Attribute.swift */; };
@@ -34,8 +37,6 @@
 		DB40F5F21F3D49FB00CEC4DD /* GetConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DB1F3D49FB00CEC4DD /* GetConstraint.swift */; };
 		DB40F5F31F3D49FB00CEC4DD /* Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DC1F3D49FB00CEC4DD /* Hierarchy.swift */; };
 		DB40F5F41F3D49FB00CEC4DD /* Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DC1F3D49FB00CEC4DD /* Hierarchy.swift */; };
-		DB40F5F51F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */; };
-		DB40F5F61F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */; };
 		DB40F5F71F3D49FB00CEC4DD /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */; };
 		DB40F5F81F3D49FB00CEC4DD /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */; };
 		DB40F5F91F3D49FB00CEC4DD /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5DF1F3D49FB00CEC4DD /* Structure.swift */; };
@@ -89,6 +90,9 @@
 		DB1286211F7959650067EE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1286241F7959650067EE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1286261F7959650067EE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Struct.swift"; sourceTree = "<group>"; };
+		DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutXAxisAnchor+OP.swift"; sourceTree = "<group>"; };
+		DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutYAxisAnchor+OP.swift"; sourceTree = "<group>"; };
 		DB40F5AE1F3D479100CEC4DD /* Bricking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bricking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40F5CA1F3D492900CEC4DD /* Bricking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bricking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 		DB40F5DA1F3D49FB00CEC4DD /* Fill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fill.swift; sourceTree = "<group>"; };
 		DB40F5DB1F3D49FB00CEC4DD /* GetConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConstraint.swift; sourceTree = "<group>"; };
 		DB40F5DC1F3D49FB00CEC4DD /* Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hierarchy.swift; sourceTree = "<group>"; };
-		DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+OP.swift"; sourceTree = "<group>"; };
 		DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		DB40F5DF1F3D49FB00CEC4DD /* Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
 		DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertically.swift; sourceTree = "<group>"; };
@@ -193,8 +196,10 @@
 				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
 				DB40F6111F3D60AF00CEC4DD /* Collapse.swift */,
 				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
+				DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */,
 				DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */,
-				DB40F5DD1F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift */,
+				DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */,
+				DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */,
 				DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */,
 				DB73B3E320035A6A00332E72 /* Grid.swift */,
 				DB56ED6420036FAF00FB7824 /* Others.swift */,
@@ -373,7 +378,6 @@
 				DB40F5E31F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F71F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB7E1F0B20106ACD009ECC1A /* Others.swift in Sources */,
-				DB40F5F51F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
 				DB40F6131F3D60AF00CEC4DD /* Collapse.swift in Sources */,
 				DB40F5E51F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
@@ -399,14 +403,16 @@
 				DB7725DC1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
 				DB40F5E41F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F81F3D49FB00CEC4DD /* Operator.swift in Sources */,
-				DB40F5F61F3D49FB00CEC4DD /* NSLayoutAnchor+OP.swift in Sources */,
 				DB40F6121F3D60AF00CEC4DD /* Collapse.swift in Sources */,
+				DB16111420D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift in Sources */,
 				DB40F5E61F3D49FB00CEC4DD /* Center.swift in Sources */,
 				DB40F5EA1F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift in Sources */,
+				DB16111220D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift in Sources */,
 				DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */,
 				DB626B021FB17FFE002D2ACE /* NSLayoutDimension+OP.swift in Sources */,
 				DB40F5F01F3D49FB00CEC4DD /* Fill.swift in Sources */,
 				DB40F5FC1F3D49FB00CEC4DD /* Vertically.swift in Sources */,
+				DB16111020D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift in Sources */,
 				DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5EE1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
 				DB56ED6520036FAF00FB7824 /* Others.swift in Sources */,

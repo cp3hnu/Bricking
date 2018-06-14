@@ -9,42 +9,24 @@
 import Foundation
 
 @available(iOS 9.0, *)
+public typealias CPLayoutDimension = CPLayoutAnchor<NSLayoutDimension, NSLayoutDimension>
+
+@available(iOS 9.0, *)
+public typealias PriorityDimension = PriorityAnchor<NSLayoutDimension, NSLayoutDimension>
+
+// MARK: - NSLayoutDimension => PriorityDimension
+@available(iOS 9.0, *)
 extension NSLayoutDimension {
     static public func !! (left: NSLayoutDimension, right: LayoutPriority) -> PriorityDimension {
-        return PriorityDimension(dimension: CPLayoutDimension(dimension: left, multiplier: 1.0, constant: 0.0), priority: right)
+        return PriorityDimension(anchor: CPLayoutDimension(anchor: left), priority: right)
     }
-}
-
-@available(iOS 9.0, *)
-public struct CPLayoutDimension {
-    let dimension: NSLayoutDimension
-    let multiplier: CGFloat
-    let constant: CGFloat
-    
-    static public func + (left: CPLayoutDimension, right: CGFloat) -> CPLayoutDimension {
-        return CPLayoutDimension(dimension: left.dimension, multiplier: 1, constant: left.constant + right)
-    }
-    
-    static public func - (left: CPLayoutDimension, right: CGFloat) -> CPLayoutDimension {
-        return left + (-right)
-    }
-    
-    static public func !! (left: CPLayoutDimension, right: LayoutPriority) -> PriorityDimension {
-        return PriorityDimension(dimension: left, priority: right)
-    }
-}
-
-@available(iOS 9.0, *)
-public struct PriorityDimension {
-    public let dimension: CPLayoutDimension
-    public let priority: LayoutPriority
 }
 
 // MARK: - NSLayoutDimension => CPLayoutDimension
 @available(iOS 9.0, *)
 extension NSLayoutDimension {
     static public func + (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
-        return CPLayoutDimension(dimension: left, multiplier: 1, constant: right)
+        return CPLayoutDimension(anchor: left, multiplier: 1, constant: right)
     }
     
     static public func - (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
@@ -52,7 +34,7 @@ extension NSLayoutDimension {
     }
     
     static public func * (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
-        return CPLayoutDimension(dimension: left, multiplier: right, constant: 0)
+        return CPLayoutDimension(anchor: left, multiplier: right, constant: 0)
     }
     
     static public func / (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
@@ -64,7 +46,7 @@ extension NSLayoutDimension {
     }
 }
 
-// MARK: - Constant
+// MARK: - NSLayoutDimension ~ Constant
 @available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
@@ -89,51 +71,26 @@ extension NSLayoutDimension {
     }
 }
 
-// MARK: - NSLayoutDimension
+// MARK: - NSLayoutDimension ~ NSLayoutDimension
 @available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
     static public func == (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
-        return left == CPLayoutDimension(dimension: right, multiplier: 1.0, constant: 0.0)
+        return left == CPLayoutDimension(anchor: right, multiplier: 1.0, constant: 0.0)
     }
     
     @discardableResult
     static public func >= (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
-        return left >= CPLayoutDimension(dimension: right, multiplier: 1.0, constant: 0.0)
+        return left >= CPLayoutDimension(anchor: right, multiplier: 1.0, constant: 0.0)
     }
     
     @discardableResult
     static public func <= (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
-        return left <= CPLayoutDimension(dimension: right, multiplier: 1.0, constant: 0.0)
+        return left <= CPLayoutDimension(anchor: right, multiplier: 1.0, constant: 0.0)
     }
 }
 
-// MARK: - CPLayoutDimension
-@available(iOS 9.0, *)
-extension NSLayoutDimension {
-    @discardableResult
-    static public func == (left: NSLayoutDimension, right: CPLayoutDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(equalTo: right.dimension, multiplier: right.multiplier, constant: right.constant)
-        constraint.isActive = true
-        return constraint
-    }
-    
-    @discardableResult
-    static public func >= (left: NSLayoutDimension, right: CPLayoutDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(greaterThanOrEqualTo: right.dimension, multiplier: right.multiplier, constant: right.constant)
-        constraint.isActive = true
-        return constraint
-    }
-    
-    @discardableResult
-    static public func <= (left: NSLayoutDimension, right: CPLayoutDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(lessThanOrEqualTo: right.dimension, multiplier: right.multiplier, constant: right.constant)
-        constraint.isActive = true
-        return constraint
-    }
-}
-
-// MARK: - PriorityConstant
+// MARK: - NSLayoutDimension ~ PriorityConstant
 @available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
@@ -155,34 +112,6 @@ extension NSLayoutDimension {
     @discardableResult
     static public func <= (left: NSLayoutDimension, right: PriorityConstant) -> NSLayoutConstraint {
         let constraint = left.constraint(lessThanOrEqualToConstant: right.constant)
-        constraint.priority = right.priority
-        constraint.isActive = true
-        return constraint
-    }
-}
-
-// MARK: - PriorityDimension
-@available(iOS 9.0, *)
-extension NSLayoutDimension {
-    @discardableResult
-    static public func == (left: NSLayoutDimension, right: PriorityDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(equalTo: right.dimension.dimension, multiplier: right.dimension.multiplier, constant: right.dimension.constant)
-        constraint.priority = right.priority
-        constraint.isActive = true
-        return constraint
-    }
-    
-    @discardableResult
-    static public func >= (left: NSLayoutDimension, right: PriorityDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(greaterThanOrEqualTo: right.dimension.dimension, multiplier: right.dimension.multiplier, constant: right.dimension.constant)
-        constraint.priority = right.priority
-        constraint.isActive = true
-        return constraint
-    }
-    
-    @discardableResult
-    static public func <= (left: NSLayoutDimension, right: PriorityDimension) -> NSLayoutConstraint {
-        let constraint = left.constraint(lessThanOrEqualTo: right.dimension.dimension, multiplier: right.dimension.multiplier, constant: right.dimension.constant)
         constraint.priority = right.priority
         constraint.isActive = true
         return constraint

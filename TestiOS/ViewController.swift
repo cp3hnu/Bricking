@@ -32,13 +32,17 @@ class SecondCtrlr: UIViewController {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.red
         
-        
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "zhaowei"
+        label.text = "Test"
+        view.asv(label)
         
-        view.asv(imageView, label)
-        (imageView.size(30)-label).togetherCenterHorizontally().top(100)
+        label.topAnchor == topLayoutGuide.bottomAnchor
+        label.bottomAnchor == bottomLayoutGuide.topAnchor
+        label.leftAnchor == view.leftAnchor + 20
+        label.widthAnchor == view.widthAnchor - 100
+        
+       
         
         /*
         let view1 = UIView()
@@ -66,6 +70,8 @@ class SecondCtrlr: UIViewController {
             |view4|,
             self.bottomLayoutGuide
         )*/
+        
+        
     }
 
     
@@ -73,4 +79,6 @@ class SecondCtrlr: UIViewController {
         
     }
 }
+
+
 
