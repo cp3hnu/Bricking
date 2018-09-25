@@ -8,7 +8,7 @@
 
 - Supports iOS and macOS
 - Supports [dynamical or conditional layout(issues#53)](https://github.com/freshOS/Stevia/issues/53)
-- Supports LayoutGuide
+- Supports **topLayoutGuide(iOS 9)** , **bottomLayoutGuide(iOS 9)**  and **safeAreaLayoutGuide(iOS 11)** 
 - Support setting priority
 - Supports center-based layout
 - Supports view shrink(hide view and compress the space occupied by the view)
@@ -68,16 +68,29 @@ asv(views)
 layoutDynamically(views)
 ```
 
-#### LayoutGuide
+#### topLayoutGuide, bottomLayoutGuide
 
 ```swift
 view.layout(
-    topLayoutGuide,
+    topLayoutGuide.bottomAnchor,
     10,
     |subview1| ~ 50,
     10,
     |subview2|,
-    bottomLayoutGuide
+    bottomLayoutGuide.topmAnchor
+)
+```
+
+#### safeAreaLayoutGuide
+
+```swift
+view.layout(
+    view.safeAreaLayoutGuide.topAnchor,
+    10,
+    |subview1| ~ 50,
+    10,
+    |subview2|,
+    view.safeAreaLayoutGuide.bottomAnchor
 )
 ```
 
@@ -145,11 +158,21 @@ button.centerInContainer()
 alignLefts(label1, label2)
 ```
 
+#### Array Chainning
+
+```swift
+[label1, label2].alignLefts().alignTops()
+```
+
+#### More other
+
+...
+
 ## Requirements
 
-- Swift 4.0+
+- Swift 4.2+
 
-- Xcode 9.0+
+- Xcode 10.0+
 
 - iOS 8+
 
