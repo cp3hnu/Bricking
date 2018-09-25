@@ -53,13 +53,6 @@ public struct CenterYPlaceHolder {}
 public let centerX = CenterXPlaceHolder()
 public let centerY = CenterYPlaceHolder()
 
-@available(iOS 9.0, *)
-public class MacLayoutSupport {
-    var topAnchor: NSLayoutYAxisAnchor = NSLayoutYAxisAnchor()
-    var bottomAnchor: NSLayoutYAxisAnchor = NSLayoutYAxisAnchor()
-    var heightAnchor: NSLayoutDimension = NSLayoutDimension()
-}
-
 public struct PriorityAttribute {
     public let attribute: CPLayoutAttribute
     public let priority: LayoutPriority

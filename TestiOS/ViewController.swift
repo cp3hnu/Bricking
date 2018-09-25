@@ -29,22 +29,6 @@ class SecondCtrlr: UIViewController {
         view.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
         title = "Second"
         
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.red
-        
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = "Test"
-        view.asv(label)
-        
-        label.topAnchor == topLayoutGuide.bottomAnchor
-        label.bottomAnchor == bottomLayoutGuide.topAnchor
-        label.leftAnchor == view.leftAnchor + 20
-        label.widthAnchor == view.widthAnchor - 100
-        
-       
-        
-        /*
         let view1 = UIView()
         view1.backgroundColor = UIColor.black
         view1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
@@ -59,18 +43,31 @@ class SecondCtrlr: UIViewController {
         view4.backgroundColor = UIColor.blue
         
         view.asv(view1, view2, view3, view4)
-        view.layout(
-            self.topLayoutGuide,
-            10,
-            |view1| ~ 50,
-            30,
-            |view2| ~ 50,
-            |view3| ~ 50,
-            40,
-            |view4|,
-            self.bottomLayoutGuide
-        )*/
-        
+        if #available(iOS 11, *) {
+            view.layout(
+                self.view.safeAreaLayoutGuide.topAnchor,
+                10,
+                |view1| ~ 50,
+                30,
+                |view2| ~ 50,
+                |view3| ~ 50,
+                40,
+                |view4|,
+                self.view.safeAreaLayoutGuide.bottomAnchor
+            )
+        } else {
+            view.layout(
+                self.topLayoutGuide.bottomAnchor,
+                10,
+                |view1| ~ 50,
+                30,
+                |view2| ~ 50,
+                |view3| ~ 50,
+                40,
+                |view4|,
+                self.bottomLayoutGuide.topAnchor
+            )
+        }
         
     }
 

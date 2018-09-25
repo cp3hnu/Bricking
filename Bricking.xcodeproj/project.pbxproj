@@ -17,6 +17,10 @@
 		DB16111020D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */; };
 		DB16111220D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */; };
 		DB16111420D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */; };
+		DB1FE2E1215A1EB600DD06B0 /* NSLayoutYAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */; };
+		DB1FE2E2215A1EBC00DD06B0 /* NSLayoutAnchor+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */; };
+		DB1FE2E3215A1EBE00DD06B0 /* NSLayoutDimension+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */; };
+		DB1FE2E4215A1EC000DD06B0 /* NSLayoutXAxisAnchor+OP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */; };
 		DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E21F3D49FB00CEC4DD /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */; };
 		DB40F5E31F3D49FB00CEC4DD /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40F5D41F3D49FB00CEC4DD /* Attribute.swift */; };
@@ -297,18 +301,19 @@
 					DB1286171F7959640067EE77 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJF3498JFC;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					DB40F5AD1F3D479100CEC4DD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJF3498JFC;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					DB40F5C91F3D492900CEC4DD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJF3498JFC;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -374,12 +379,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1FE2E2215A1EBC00DD06B0 /* NSLayoutAnchor+Struct.swift in Sources */,
 				DB40F5F91F3D49FB00CEC4DD /* Structure.swift in Sources */,
 				DB40F5E31F3D49FB00CEC4DD /* Attribute.swift in Sources */,
 				DB40F5F71F3D49FB00CEC4DD /* Operator.swift in Sources */,
 				DB7E1F0B20106ACD009ECC1A /* Others.swift in Sources */,
+				DB1FE2E1215A1EB600DD06B0 /* NSLayoutYAxisAnchor+OP.swift in Sources */,
 				DB40F6131F3D60AF00CEC4DD /* Collapse.swift in Sources */,
 				DB40F5E51F3D49FB00CEC4DD /* Center.swift in Sources */,
+				DB1FE2E4215A1EC000DD06B0 /* NSLayoutXAxisAnchor+OP.swift in Sources */,
 				DB7725DD1FF1EBFF00F469A0 /* Priority+OP.swift in Sources */,
 				DB40F5E91F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift in Sources */,
 				DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */,
@@ -388,6 +396,7 @@
 				DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5ED1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
 				DB40F5EB1F3D49FB00CEC4DD /* DoubleDash.swift in Sources */,
+				DB1FE2E3215A1EBE00DD06B0 /* NSLayoutDimension+OP.swift in Sources */,
 				DB40F5E71F3D49FB00CEC4DD /* CPLayoutAttribute.swift in Sources */,
 				DB40F5F11F3D49FB00CEC4DD /* GetConstraint.swift in Sources */,
 				DB40F5F31F3D49FB00CEC4DD /* Hierarchy.swift in Sources */,
@@ -464,7 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -479,7 +488,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -622,7 +631,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -646,7 +655,7 @@
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -668,7 +677,7 @@
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -689,7 +698,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

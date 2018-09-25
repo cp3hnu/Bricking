@@ -131,10 +131,8 @@ extension View {
                     self.flexiableAttribute(view.laTop, fm: pfm, attribute2: preViews.first!.laBottom)
                 } else if preObject is CenterYPlaceHolder {
                     self.flexiableAttribute(view.laTop, fm: pfm, attribute2: self.laCenterY)
-                } else if let top = preObject as? LayoutSupport {
-                    if #available(iOS 9.0, *) {
-                        self.flexiableAnchor(view.topAnchor, fm: pfm, anchor2: top.bottomAnchor)
-                    }
+                } else if #available(iOS 9.0, *), let anchor = preObject as? NSLayoutYAxisAnchor {
+                    self.flexiableAnchor(view.topAnchor, fm: pfm, anchor2: anchor)
                 }
             }
             flexibleMargin = nil
@@ -148,17 +146,15 @@ extension View {
                 self.flexiableAttribute(view.laTop, fm: fm, attribute2: preViews.first!.laBottom)
             } else if preObject is CenterYPlaceHolder {
                 self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
-            } else if let top = preObject as? LayoutSupport {
-                if #available(iOS 9.0, *) {
-                    self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: top.bottomAnchor)
-                }
+            } else if #available(iOS 9.0, *), let anchor = preObject as? NSLayoutYAxisAnchor {
+                self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: anchor)
             }
         }
     }
     
     @available(iOS 9.0, *)
     func bottomAnchorConstraints(objects: [Any], flexibleMargin: FlexibleMargin?) {
-        guard let bottom = objects.last as? LayoutSupport else { return }
+        guard let anchor = objects.last as? NSLayoutYAxisAnchor else { return }
         
         let lastIndex = objects.count - 1
         if let pfm = flexibleMargin {
@@ -166,18 +162,18 @@ extension View {
             guard lastIndex >= 2 else { return }
             let preObject = objects[lastIndex-2]
             if let preView = preObject as? View {
-                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: anchor)
             } else if let preViews = preObject as? [View] {
-                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: anchor)
             }
         } else {
             guard lastIndex >= 1 else { return }
             let fm = FlexibleMargin(constant: 0, relation: .equal)
             let preObject = objects[lastIndex-1]
             if let preView = preObject as? View {
-                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                self.flexiableAnchor(preView.bottomAnchor, fm: fm, anchor2: anchor)
             } else if let preViews = preObject as? [View] {
-                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: bottom.topAnchor)
+                self.flexiableAnchor(preViews.first!.bottomAnchor, fm: fm, anchor2: anchor)
             }
         }
     }
