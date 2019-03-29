@@ -23,6 +23,18 @@ extension View {
     }
     
     @discardableResult
+    public func leading(_ points: CGFloat) -> Self {
+        self.laLeading == points
+        return self
+    }
+    
+    @discardableResult
+    public func trailing(_ points: CGFloat) -> Self {
+        self.laTrailing == points
+        return self
+    }
+    
+    @discardableResult
     public func top(_ points: CGFloat) -> Self {
         self.laTop == points
         return self
@@ -67,6 +79,16 @@ extension View {
     }
     
     @discardableResult
+    public func leading(_ fm: FlexibleMargin) -> Self {
+        return flexiableAttribute(self.laLeading, fm: fm)
+    }
+    
+    @discardableResult
+    public func trailing(_ fm: FlexibleMargin) -> Self {
+        return flexiableAttribute(self.laTrailing, fm: fm)
+    }
+    
+    @discardableResult
     public func top(_ fm: FlexibleMargin) -> Self {
         return flexiableAttribute(self.laTop, fm: fm)
     }
@@ -103,53 +125,6 @@ extension View {
 // MARK: - Percentage
 extension View {
     @discardableResult
-    public func left(_ p: Percentage) -> Self {
-        if let spv = superview {
-            self.laLeft == p.value % spv.laRight
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func right(_ p: Percentage) -> Self {
-        if let spv = superview {
-            if p.value >= 100 {
-                self.laRight == spv.laLeft
-            } else {
-                self.laRight == (100 - p.value) % spv.laRight
-            }
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func top(_ p: Percentage) -> Self {
-        if let spv = superview {
-            self.laTop == p.value % spv.laBottom
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func bottom(_ p: Percentage) -> Self {
-        if let spv = superview {
-            if p.value >= 100 {
-                self.laBottom == spv.laTop
-            } else {
-                self.laBottom == (100 - p.value) % spv.laBottom
-            }
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func size(_ p: Percentage) -> Self {
-        width(p)
-        height(p)
-        return self
-    }
-    
-    @discardableResult
     public func width(_ p: Percentage) -> Self {
         if let spv = superview {
             self.laWidth == p.value % spv.laWidth
@@ -162,6 +137,13 @@ extension View {
         if let spv = superview {
             self.laHeight == p.value % spv.laHeight
         }
+        return self
+    }
+    
+    @discardableResult
+    public func size(_ p: Percentage) -> Self {
+        width(p)
+        height(p)
         return self
     }
 }

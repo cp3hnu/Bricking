@@ -8,10 +8,10 @@
 
 import Foundation
 
-// MARK: - Center together
+// MARK: - Multiple views are centered horizontally together
 extension Array where Element: View {
     @discardableResult
-    public func centerTogetherHorizontally() -> View {
+    public func groupCenterHorizontally() -> View {
         guard self.count > 0 else { return View() }
         
         let wrappedView = View()
@@ -73,8 +73,6 @@ extension Array where Element: View {
         }
         spaceViews.equalWidths()
         
-        var array: [View] = self
-        array += spaceViews
-        return array
+        return self + spaceViews
     }
 }

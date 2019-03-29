@@ -47,6 +47,14 @@ extension View {
         return CPLayoutAttribute(view: self, attribute: .right)
     }
     
+    public var laLeading: CPLayoutAttribute {
+        return CPLayoutAttribute(view: self, attribute: .leading)
+    }
+    
+    public var laTrailing: CPLayoutAttribute {
+        return CPLayoutAttribute(view: self, attribute: .trailing)
+    }
+    
     public var laCenterX: CPLayoutAttribute {
         return CPLayoutAttribute(view: self, attribute: .centerX)
     }

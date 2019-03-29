@@ -55,6 +55,28 @@ public func alignRights(_ views: [View]) -> [View] {
 }
 
 @discardableResult
+public func alignLeadings(_ views: View...) -> [View] {
+    return alignLeadings(views)
+}
+
+@discardableResult
+public func alignLeadings(_ views: [View]) -> [View] {
+    align(.leading, views: views)
+    return views
+}
+
+@discardableResult
+public func alignTrailings(_ views: View...) -> [View] {
+    return alignTrailings(views)
+}
+
+@discardableResult
+public func alignTrailings(_ views: [View]) -> [View] {
+    align(.trailing, views: views)
+    return views
+}
+
+@discardableResult
 public func alignTops(_ views: View...) -> [View] {
     return alignTops(views)
 }
@@ -85,6 +107,18 @@ public func alignLeftAndRights(_ views: View...) -> [View] {
 public func alignLeftAndRights(_ views: [View]) -> [View] {
     alignLefts(views)
     alignRights(views)
+    return views
+}
+
+@discardableResult
+public func alignLeadingAndTrailings(_ views: View...) -> [View] {
+    return alignLeadingAndTrailings(views)
+}
+
+@discardableResult
+public func alignLeadingAndTrailings(_ views: [View]) -> [View] {
+    alignLeadings(views)
+    alignTrailings(views)
     return views
 }
 
@@ -149,6 +183,15 @@ extension Array where Element: View {
     @discardableResult
     public func alignRights() -> Array<View> {
         return Bricking.alignRights(self)
+    }
+    
+    public func alignLeadings() -> Array<View> {
+        return Bricking.alignLeadings(self)
+    }
+    
+    @discardableResult
+    public func alignTrailings() -> Array<View> {
+        return Bricking.alignTrailings(self)
     }
     
     @discardableResult

@@ -18,6 +18,14 @@ extension View {
         return constraintFor(attribute: .right)
     }
     
+    public var leadingConstraint: NSLayoutConstraint? {
+        return constraintFor(attribute: .leading)
+    }
+    
+    public var trailingConstraint: NSLayoutConstraint? {
+        return constraintFor(attribute: .trailing)
+    }
+    
     public var topConstraint: NSLayoutConstraint? {
         return constraintFor(attribute: .top)
     }
