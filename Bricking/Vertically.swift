@@ -102,6 +102,8 @@ extension View {
             attribute1 <= attribute2 + fm.constant
         case .equal:
             attribute1 == attribute2 + fm.constant
+        @unknown default:
+            break
         }
     }
     
@@ -116,6 +118,8 @@ extension View {
             anchor1 <= anchor2 + fm.constant
         case .equal:
             anchor1 == anchor2 + fm.constant
+        @unknown default:
+            break
         }
     }
     

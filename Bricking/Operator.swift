@@ -155,6 +155,8 @@ public func - (left: PartialFlexibleConstraint, right: View) -> [View] {
         right.laLeft <= last.laRight + left.fm.constant
     case .equal:
         right.laLeft == last.laRight + left.fm.constant
+    @unknown default:
+        break
     }
     return left.views + [right]
 }
@@ -174,6 +176,8 @@ public func - (left: LeftFlexibleMargin, right: View) -> View {
         right.laLeft <= left.fm.constant
     case .equal:
         right.laLeft == left.fm.constant
+    @unknown default:
+        break
     }
     return right
 }
@@ -193,6 +197,8 @@ public func - (left: View, right: RightFlexibleMargin) -> View {
         left.laRight >= right.fm.constant
     case .equal:
         left.laRight == right.fm.constant
+    @unknown default:
+        break
     }
     
     return left

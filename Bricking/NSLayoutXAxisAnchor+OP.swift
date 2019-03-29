@@ -25,11 +25,11 @@ extension NSLayoutXAxisAnchor {
 // MARK: - PriorityXAxisAnchor => CPLayoutXAxisAnchor
 @available(iOS 9.0, *)
 public extension NSLayoutXAxisAnchor {
-    static public func + (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
+    static func + (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
         return CPLayoutXAxisAnchor(anchor: left, constant: right)
     }
     
-    static public func - (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
+    static func - (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
         return left + (-right)
     }
 }
@@ -38,17 +38,17 @@ public extension NSLayoutXAxisAnchor {
 @available(iOS 9.0, *)
 public extension NSLayoutXAxisAnchor {
     @discardableResult
-    static public func == (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    static func == (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         return left == CPLayoutXAxisAnchor(anchor: right)
     }
     
     @discardableResult
-    static public func >= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    static func >= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         return left >= CPLayoutXAxisAnchor(anchor: right)
     }
     
     @discardableResult
-    static public func <= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    static func <= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
         return left <= CPLayoutXAxisAnchor(anchor: right)
     }
 }

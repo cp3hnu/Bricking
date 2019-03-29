@@ -7,11 +7,11 @@
 //
 
 public extension LayoutPriority {
-    public static func + (left: LayoutPriority, right: Float) -> LayoutPriority {
+    static func + (left: LayoutPriority, right: Float) -> LayoutPriority {
         return LayoutPriority(rawValue: left.rawValue + right)
     }
     
-    public static func - (left: LayoutPriority, right: Float) -> LayoutPriority {
+    static func - (left: LayoutPriority, right: Float) -> LayoutPriority {
         return LayoutPriority(rawValue: left.rawValue - right)
     }
 }

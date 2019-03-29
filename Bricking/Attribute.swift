@@ -116,6 +116,8 @@ extension View {
             attribute <= fm.constant
         case .equal:
             attribute == fm.constant
+        @unknown default:
+            break
         }
         
         return self
