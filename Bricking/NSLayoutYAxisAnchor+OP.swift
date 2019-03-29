@@ -8,14 +8,11 @@
 
 import Foundation
 
-@available(iOS 9.0, *)
 public typealias CPLayoutYAxisAnchor = CPLayoutAnchor<NSLayoutYAxisAnchor, NSLayoutYAxisAnchor>
 
-@available(iOS 9.0, *)
 public typealias PriorityYAxisAnchor = PriorityAnchor<NSLayoutYAxisAnchor, NSLayoutYAxisAnchor>
 
 // MARK: - NSLayoutYAxisAnchor => PriorityYAxisAnchor
-@available(iOS 9.0, *)
 extension NSLayoutYAxisAnchor {
     static public func !! (left: NSLayoutYAxisAnchor, right: LayoutPriority) -> PriorityYAxisAnchor {
         return PriorityYAxisAnchor(anchor: CPLayoutYAxisAnchor(anchor: left), priority: right)
@@ -23,7 +20,6 @@ extension NSLayoutYAxisAnchor {
 }
 
 // MARK: - NSLayoutYAxisAnchor => CPLayoutYAxisAnchor
-@available(iOS 9.0, *)
 public extension NSLayoutYAxisAnchor {
     static func + (left: NSLayoutYAxisAnchor, right: CGFloat) -> CPLayoutYAxisAnchor {
         return CPLayoutYAxisAnchor(anchor: left, constant: right)
@@ -35,7 +31,6 @@ public extension NSLayoutYAxisAnchor {
 }
 
 // MARK: - NSLayoutYAxisAnchor ~ NSLayoutYAxisAnchor
-@available(iOS 9.0, *)
 public extension NSLayoutYAxisAnchor {
     @discardableResult
     static func == (left: NSLayoutYAxisAnchor, right: NSLayoutYAxisAnchor) -> NSLayoutConstraint {

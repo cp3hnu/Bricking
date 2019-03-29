@@ -8,14 +8,11 @@
 
 import Foundation
 
-@available(iOS 9.0, *)
 public typealias CPLayoutDimension = CPLayoutAnchor<NSLayoutDimension, NSLayoutDimension>
 
-@available(iOS 9.0, *)
 public typealias PriorityDimension = PriorityAnchor<NSLayoutDimension, NSLayoutDimension>
 
 // MARK: - NSLayoutDimension => PriorityDimension
-@available(iOS 9.0, *)
 extension NSLayoutDimension {
     static public func !! (left: NSLayoutDimension, right: LayoutPriority) -> PriorityDimension {
         return PriorityDimension(anchor: CPLayoutDimension(anchor: left), priority: right)
@@ -23,7 +20,6 @@ extension NSLayoutDimension {
 }
 
 // MARK: - NSLayoutDimension => CPLayoutDimension
-@available(iOS 9.0, *)
 extension NSLayoutDimension {
     static public func + (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
         return CPLayoutDimension(anchor: left, multiplier: 1, constant: right)
@@ -47,7 +43,6 @@ extension NSLayoutDimension {
 }
 
 // MARK: - NSLayoutDimension ~ Constant
-@available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
     static public func == (left: NSLayoutDimension, right: CGFloat) -> NSLayoutConstraint {
@@ -72,7 +67,6 @@ extension NSLayoutDimension {
 }
 
 // MARK: - NSLayoutDimension ~ NSLayoutDimension
-@available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
     static public func == (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
@@ -91,7 +85,6 @@ extension NSLayoutDimension {
 }
 
 // MARK: - NSLayoutDimension ~ PriorityConstant
-@available(iOS 9.0, *)
 extension NSLayoutDimension {
     @discardableResult
     static public func == (left: NSLayoutDimension, right: PriorityConstant) -> NSLayoutConstraint {

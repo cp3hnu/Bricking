@@ -169,6 +169,10 @@ private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
         v1.laCenterX == v2.laCenterX
     case .centerY:
         v1.laCenterY == v2.laCenterY
+    case .leading:
+        v1.laLeading == v2.laLeading
+    case .trailing:
+        v1.laTrailing == v2.laTrailing
     default:
         break
     }

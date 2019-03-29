@@ -307,7 +307,7 @@
 					DB40F5AD1F3D479100CEC4DD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJF3498JFC;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					DB40F5C91F3D492900CEC4DD = {
@@ -633,7 +633,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -657,7 +657,7 @@
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

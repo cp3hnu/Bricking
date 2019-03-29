@@ -6,7 +6,6 @@
 //  Copyright © 2018年 CP3. All rights reserved.
 //
 
-@available(iOS 9.0, *)
 public struct CPLayoutAnchor<Anchor, AnchorType> where Anchor : NSLayoutAnchor<AnchorType> {
     let anchor: Anchor
     let multiplier: CGFloat
@@ -54,7 +53,6 @@ public struct CPLayoutAnchor<Anchor, AnchorType> where Anchor : NSLayoutAnchor<A
     }
 }
 
-@available(iOS 9.0, *)
 public struct PriorityAnchor<Anchor, AnchorType> where Anchor : NSLayoutAnchor<AnchorType> {
     let anchor: CPLayoutAnchor<Anchor, AnchorType>
     let priority: LayoutPriority
