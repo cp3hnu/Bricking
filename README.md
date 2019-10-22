@@ -171,12 +171,10 @@ alignLefts(label1, label2)
 ## Requirements
 
 - Swift 5.0+
-
 - Xcode 10.0+
-
 - iOS 9+
+- macOS 10.12+
 
-  
 
 
 ## License

@@ -87,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3542857D235F39DD00F1056B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		DB1286181F7959640067EE77 /* TestiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB12861A1F7959650067EE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB12861C1F7959650067EE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 		DB40F5781F3D40C600CEC4DD = {
 			isa = PBXGroup;
 			children = (
+				3542857D235F39DD00F1056B /* Package.swift */,
 				DB40F5D21F3D49E600CEC4DD /* Bricking */,
 				DB1286191F7959650067EE77 /* TestiOS */,
 				DB40F5831F3D40C600CEC4DD /* Products */,
@@ -678,6 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -700,6 +703,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
