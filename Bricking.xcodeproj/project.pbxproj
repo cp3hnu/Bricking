@@ -149,6 +149,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354285BA235FE07B00F1056B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DB40F5DC1F3D49FB00CEC4DD /* Hierarchy.swift */,
+				DB40F5DF1F3D49FB00CEC4DD /* Structure.swift */,
+				DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */,
+				DB40F5D41F3D49FB00CEC4DD /* Attribute.swift */,
+				DB40F5D51F3D49FB00CEC4DD /* Center.swift */,
+				DB40F5D61F3D49FB00CEC4DD /* CPLayoutAttribute.swift */,
+				DB40F5D71F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift */,
+				DB40F5D81F3D49FB00CEC4DD /* DoubleDash.swift */,
+				DB40F5D91F3D49FB00CEC4DD /* EqualSize.swift */,
+				DB40F5DA1F3D49FB00CEC4DD /* Fill.swift */,
+				DB40F5DB1F3D49FB00CEC4DD /* GetConstraint.swift */,
+				DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */,
+				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
+				DB40F6111F3D60AF00CEC4DD /* Collapse.swift */,
+				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
+				DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */,
+				DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */,
+				DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */,
+				DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */,
+				DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */,
+				DB73B3E320035A6A00332E72 /* Grid.swift */,
+				DB56ED6420036FAF00FB7824 /* Others.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		DB1286191F7959650067EE77 /* TestiOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,28 +216,7 @@
 			children = (
 				DB40F5FE1F3D4A9F00CEC4DD /* Info.plist */,
 				DB40F6091F3D4EDE00CEC4DD /* Bricking.h */,
-				DB40F5DC1F3D49FB00CEC4DD /* Hierarchy.swift */,
-				DB40F5DF1F3D49FB00CEC4DD /* Structure.swift */,
-				DB40F5D31F3D49FB00CEC4DD /* Alignment.swift */,
-				DB40F5D41F3D49FB00CEC4DD /* Attribute.swift */,
-				DB40F5D51F3D49FB00CEC4DD /* Center.swift */,
-				DB40F5D61F3D49FB00CEC4DD /* CPLayoutAttribute.swift */,
-				DB40F5D71F3D49FB00CEC4DD /* CPLayoutAttribute+OP.swift */,
-				DB40F5D81F3D49FB00CEC4DD /* DoubleDash.swift */,
-				DB40F5D91F3D49FB00CEC4DD /* EqualSize.swift */,
-				DB40F5DA1F3D49FB00CEC4DD /* Fill.swift */,
-				DB40F5DB1F3D49FB00CEC4DD /* GetConstraint.swift */,
-				DB40F5DE1F3D49FB00CEC4DD /* Operator.swift */,
-				DB40F5E01F3D49FB00CEC4DD /* Vertically.swift */,
-				DB40F6111F3D60AF00CEC4DD /* Collapse.swift */,
-				DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */,
-				DB16110F20D1FE7800DF8E5D /* NSLayoutAnchor+Struct.swift */,
-				DB626B011FB17FFE002D2ACE /* NSLayoutDimension+OP.swift */,
-				DB16111120D1FFC000DF8E5D /* NSLayoutXAxisAnchor+OP.swift */,
-				DB16111320D1FFD300DF8E5D /* NSLayoutYAxisAnchor+OP.swift */,
-				DB7725DB1FF1EBFF00F469A0 /* Priority+OP.swift */,
-				DB73B3E320035A6A00332E72 /* Grid.swift */,
-				DB56ED6420036FAF00FB7824 /* Others.swift */,
+				354285BA235FE07B00F1056B /* Source */,
 			);
 			path = Bricking;
 			sourceTree = "<group>";
@@ -473,6 +481,7 @@
 				DEVELOPMENT_TEAM = RJF3498JFC;
 				INFOPLIST_FILE = TestiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -488,6 +497,7 @@
 				DEVELOPMENT_TEAM = RJF3498JFC;
 				INFOPLIST_FILE = TestiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.TestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -630,6 +640,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-MacOS";
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
@@ -655,6 +666,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-MacOS";
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
@@ -677,6 +689,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
@@ -700,6 +713,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;

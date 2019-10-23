@@ -6,6 +6,13 @@
 //  Copyright © 2018年 CP3. All rights reserved.
 //
 
+import Foundation
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#endif
+
 public struct CPLayoutAnchor<Anchor, AnchorType> where Anchor : NSLayoutAnchor<AnchorType> {
     let anchor: Anchor
     let multiplier: CGFloat

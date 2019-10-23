@@ -7,6 +7,11 @@
 //
 
 import Foundation
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#endif
 
 public typealias CPLayoutDimension = CPLayoutAnchor<NSLayoutDimension, NSLayoutDimension>
 

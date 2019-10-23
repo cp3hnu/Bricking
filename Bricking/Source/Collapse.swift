@@ -6,6 +6,13 @@
 //  Copyright © 2017年 CP3. All rights reserved.
 //
 
+import Foundation
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#endif
+
 extension View {
     private struct AssociatedKeys {
         static var previousConstraint = "previousConstraint"
