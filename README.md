@@ -35,6 +35,10 @@ github "cp3hnu/Bricking"
 - Add Input files *$(SRCROOT)/Carthage/Build/iOS/Bricking.framework*
 
 
+### Swift Package
+
+File -> Swift Packages -> Add Package Dependency,  then search bricking.
+
 ## Usage
 
 #### Example
