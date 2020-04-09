@@ -57,6 +57,9 @@ public enum LayoutConstraintAxis: Int {
 public struct CenterX {}
 public struct CenterY {}
 
+public let centerX = CenterX()
+public let centerY = CenterY()
+
 public struct PriorityAttribute {
     public let attribute: CPLayoutAttribute
     public let priority: LayoutPriority
