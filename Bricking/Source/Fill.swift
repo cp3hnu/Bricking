@@ -22,8 +22,8 @@ extension View {
     }
     
     public func fillContainer(insets: EdgeInsets) -> Self {
-        self.laLeft == insets.left
-        self.laRight == insets.right
+        self.laLeading == insets.left
+        self.laTrailing == insets.right
         self.laTop == insets.top
         self.laBottom == insets.bottom
         return self
@@ -38,8 +38,8 @@ extension View {
     
     @discardableResult
     public func fillHorizontally(_ points: CGFloat = 0) -> Self {
-        self.laLeft == points
-        self.laRight == points
+        self.laLeading == points
+        self.laTrailing == points
         return self
     }
 }

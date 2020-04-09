@@ -24,10 +24,14 @@ extension NSLayoutXAxisAnchor {
     }
 }
 
-// MARK: - PriorityXAxisAnchor => CPLayoutXAxisAnchor
+// MARK: - NSLayoutXAxisAnchor => CPLayoutXAxisAnchor
 public extension NSLayoutXAxisAnchor {
     static func + (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
         return CPLayoutXAxisAnchor(anchor: left, constant: right)
+    }
+    
+    static func + (left: CGFloat, right: NSLayoutXAxisAnchor) -> CPLayoutXAxisAnchor {
+        return right + left
     }
     
     static func - (left: NSLayoutXAxisAnchor, right: CGFloat) -> CPLayoutXAxisAnchor {
@@ -35,7 +39,7 @@ public extension NSLayoutXAxisAnchor {
     }
 }
 
-// MARK: - PriorityXAxisAnchor ~ PriorityXAxisAnchor
+// MARK: - NSLayoutXAxisAnchor ~ NSLayoutXAxisAnchor
 public extension NSLayoutXAxisAnchor {
     @discardableResult
     static func == (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {

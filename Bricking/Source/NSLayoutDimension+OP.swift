@@ -30,12 +30,20 @@ extension NSLayoutDimension {
         return CPLayoutDimension(anchor: left, multiplier: 1, constant: right)
     }
     
+    static public func + (left: CGFloat, right: NSLayoutDimension) -> CPLayoutDimension {
+        return right + left
+    }
+    
     static public func - (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
         return left + (-right)
     }
     
     static public func * (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {
         return CPLayoutDimension(anchor: left, multiplier: right, constant: 0)
+    }
+    
+    static public func * (left: CGFloat, right: NSLayoutDimension) -> CPLayoutDimension {
+        return right * left
     }
     
     static public func / (left: NSLayoutDimension, right: CGFloat) -> CPLayoutDimension {

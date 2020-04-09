@@ -6,7 +6,7 @@
 //  Copyright © 2017年 CP3. All rights reserved.
 //
 
-#if os(iOS)
+import Foundation
 import UIKit
 
 open class CPScrollView: UIScrollView {
@@ -50,4 +50,3 @@ open class CPScrollView: UIScrollView {
         return self
     }
 }
-#endif

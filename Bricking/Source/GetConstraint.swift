@@ -15,14 +15,6 @@ import Foundation
 
 // MARK: - Single Constraint
 extension View {
-    public var leftConstraint: NSLayoutConstraint? {
-        return constraintFor(attribute: .left)
-    }
-    
-    public var rightConstraint: NSLayoutConstraint? {
-        return constraintFor(attribute: .right)
-    }
-    
     public var leadingConstraint: NSLayoutConstraint? {
         return constraintFor(attribute: .leading)
     }

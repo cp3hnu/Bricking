@@ -22,7 +22,7 @@ extension Array where Element: View {
         let wrappedView = View()
         var spaces = [CGFloat]()
         for itemView in self.dropFirst() {
-            let space: CGFloat = itemView.leftConstraint?.constant ?? 0
+            let space: CGFloat = itemView.leadingConstraint?.constant ?? 0
             spaces.append(space)
         }
         
@@ -34,8 +34,8 @@ extension Array where Element: View {
         self.alignHorizontally()
         
         var preView = self.first!
-        self.first?.left(0).fillVertically()
-        self.last?.right(0)
+        self.first?.leading(0).fillVertically()
+        self.last?.trailing(0)
         for (idx, space) in spaces.enumerated() {
             preView-space-self[idx + 1]
             preView = self[idx + 1]
@@ -52,8 +52,8 @@ extension Array where Element: View {
         guard count > 0 else { return self }
         
         var preView = first!
-        preView.left(left)
-        last!.right(right)
+        preView.leading(left)
+        last!.trailing(right)
         dropFirst().forEach {
             preView-space-$0
             preView = $0
@@ -69,8 +69,8 @@ extension Array where Element: View {
         let spaceViews = (0..<count-1).map { _ in return View() }
         
         first!.superview?.asv(spaceViews)
-        first!.left(left)
-        last!.right(right)
+        first!.leading(left)
+        last!.trailing(right)
         for (idx, spaceView) in spaceViews.enumerated() {
             let item = self[idx]
             let nextItem = self[idx+1]

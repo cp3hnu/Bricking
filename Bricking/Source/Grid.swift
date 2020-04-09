@@ -26,7 +26,7 @@ extension Array where Element: View {
             self.first!.width((100.0/CGFloat(numberOfLine))%)
         }
         
-        self.first!.top(edgeInsets.top).left(edgeInsets.left)
+        self.first!.top(edgeInsets.top).leading(edgeInsets.left)
         self.last!.bottom(edgeInsets.bottom)
         var preHoriView = self.first!
         var preVertView = self.first!

@@ -131,8 +131,8 @@ extension View {
     }
     
     private func changeHorizontalConstraint() {
-        let (pView, pConstraint, pAttribute, pConstant) = constraintFor(.left)
-        let (nView, nConstraint, nAttribute, nConstant) = constraintFor(.right)
+        let (pView, pConstraint, pAttribute, pConstant) = constraintFor(.leading)
+        let (nView, nConstraint, nAttribute, nConstant) = constraintFor(.trailing)
         
         guard let preView = pView, let nextView = nView, let preConstraint = pConstraint, let nextConstraint = nConstraint, let preAttribute = pAttribute, let nextAttribute = nAttribute else { return }
         
@@ -161,7 +161,7 @@ extension View {
             for c in spv.constraints {
                 if let fi = c.firstItem as? View, fi == self && c.firstAttribute == attribute {
                     var constant = c.constant
-                    if attribute == LayoutAttribute.left || attribute == LayoutAttribute.top {
+                    if attribute == LayoutAttribute.leading || attribute == LayoutAttribute.top {
                         constant = -c.constant
                     }
                     return (c.secondItem as? View, c, c.secondAttribute, constant)
@@ -169,7 +169,7 @@ extension View {
                 
                 if let si = c.secondItem as? View, si == self && c.secondAttribute == attribute {
                     var constant = c.constant
-                    if attribute == LayoutAttribute.right || attribute == LayoutAttribute.bottom {
+                    if attribute == LayoutAttribute.trailing || attribute == LayoutAttribute.bottom {
                         constant = -c.constant
                     }
                     return (c.firstItem as? View, c, c.firstAttribute, constant)

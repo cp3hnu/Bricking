@@ -16,13 +16,13 @@ import Foundation
 prefix operator |
 @discardableResult
 public prefix func | (p: View) -> View {
-    return p.left(0)
+    return p.leading(0)
 }
 
 postfix operator |
 @discardableResult
 public postfix func | (p: View) -> View {
-    return p.right(0)
+    return p.trailing(0)
 }
 
 // MARK: - ~
@@ -62,7 +62,7 @@ public prefix func |- (p: CGFloat) -> SideConstraint {
 
 @discardableResult
 public prefix func |- (v: View) -> View {
-    v.left(8)
+    v.leading(8)
     return v
 }
 
@@ -74,19 +74,19 @@ public postfix func -| (p: CGFloat) -> SideConstraint {
 
 @discardableResult
 public postfix func -| (v: View) -> View {
-    v.right(8)
+    v.trailing(8)
     return v
 }
 
 @discardableResult
 public func - (left: SideConstraint, right: View) -> View {
-    right.laLeft == left.constant
+    right.laLeading == left.constant
     return right
 }
 
 @discardableResult
 public func - (left: View, right: SideConstraint) -> View {
-    left.laRight == right.constant
+    left.laTrailing == right.constant
     return left
 }
 
@@ -100,7 +100,7 @@ public func - (left: [View], right: SideConstraint) -> [View] {
 // MARK: - view-view
 @discardableResult
 public func - (left: View, right: View) -> [View] {
-    right.laLeft == left.laRight + 8
+    right.laLeading == left.laTrailing + 8
     return [left, right]
 }
 
@@ -155,11 +155,11 @@ public func - (left: PartialFlexibleConstraint, right: View) -> [View] {
     
     switch left.fm.relation {
     case .greaterThanOrEqual:
-        right.laLeft >= last.laRight + left.fm.constant
+        right.laLeading >= last.laTrailing + left.fm.constant
     case .lessThanOrEqual:
-        right.laLeft <= last.laRight + left.fm.constant
+        right.laLeading <= last.laTrailing + left.fm.constant
     case .equal:
-        right.laLeft == last.laRight + left.fm.constant
+        right.laLeading == last.laTrailing + left.fm.constant
     @unknown default:
         break
     }
@@ -176,11 +176,11 @@ public prefix func |- (fm: FlexibleMargin) -> LeftFlexibleMargin {
 public func - (left: LeftFlexibleMargin, right: View) -> View {
     switch left.fm.relation {
     case .greaterThanOrEqual:
-        right.laLeft >= left.fm.constant
+        right.laLeading >= left.fm.constant
     case .lessThanOrEqual:
-        right.laLeft <= left.fm.constant
+        right.laLeading <= left.fm.constant
     case .equal:
-        right.laLeft == left.fm.constant
+        right.laLeading == left.fm.constant
     @unknown default:
         break
     }
@@ -197,11 +197,11 @@ public postfix func -| (fm: FlexibleMargin) -> RightFlexibleMargin {
 public func - (left: View, right: RightFlexibleMargin) -> View {
     switch right.fm.relation {
     case .greaterThanOrEqual:
-        left.laRight <= right.fm.constant
+        left.laTrailing <= right.fm.constant
     case .lessThanOrEqual:
-        left.laRight >= right.fm.constant
+        left.laTrailing >= right.fm.constant
     case .equal:
-        left.laRight == right.fm.constant
+        left.laTrailing == right.fm.constant
     @unknown default:
         break
     }
@@ -234,7 +234,7 @@ public func - (left: Space, right: View) -> [View] {
 
 // MARK: - CenterX
 @discardableResult
-public func - (left: View, right: CenterXPlaceHolder) -> [View] {
+public func - (left: View, right: CenterX) -> [View] {
     let centerXView = View()
     left.superview?.asv(centerXView)
     centerXView.centerHorizontally().size(0)
@@ -243,7 +243,7 @@ public func - (left: View, right: CenterXPlaceHolder) -> [View] {
 }
 
 @discardableResult
-public func - (left: [View], right: CenterXPlaceHolder) -> [View] {
+public func - (left: [View], right: CenterX) -> [View] {
     guard let last = left.last else { return left }
     
     let centerXView = View()
@@ -254,7 +254,7 @@ public func - (left: [View], right: CenterXPlaceHolder) -> [View] {
 }
 
 @discardableResult
-public func - (left: PartialFlexibleConstraint, right: CenterXPlaceHolder) -> [View] {
+public func - (left: PartialFlexibleConstraint, right: CenterX) -> [View] {
     guard let last = left.views.last else { return left.views }
     
     let centerXView = View()

@@ -30,6 +30,10 @@ public extension NSLayoutYAxisAnchor {
         return CPLayoutYAxisAnchor(anchor: left, constant: right)
     }
     
+    static func + (left: CGFloat, right: NSLayoutYAxisAnchor) -> CPLayoutYAxisAnchor {
+        return right + left
+    }
+    
     static func -  (left: NSLayoutYAxisAnchor, right: CGFloat) -> CPLayoutYAxisAnchor {
         return left + (-right)
     }

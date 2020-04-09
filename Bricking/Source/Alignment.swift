@@ -38,28 +38,6 @@ public func alignVertically(_ views: [View]) -> [View] {
 
 // MARK: - Margin
 @discardableResult
-public func alignLefts(_ views: View...) -> [View] {
-    return alignLefts(views)
-}
-
-@discardableResult
-public func alignLefts(_ views: [View]) -> [View] {
-    align(.left, views: views)
-    return views
-}
-
-@discardableResult
-public func alignRights(_ views: View...) -> [View] {
-    return alignRights(views)
-}
-
-@discardableResult
-public func alignRights(_ views: [View]) -> [View] {
-    align(.right, views: views)
-    return views
-}
-
-@discardableResult
 public func alignLeadings(_ views: View...) -> [View] {
     return alignLeadings(views)
 }
@@ -104,36 +82,24 @@ public func alignBottoms(_ views: [View]) -> [View] {
 }
 
 @discardableResult
-public func alignLeftAndRights(_ views: View...) -> [View] {
-    return alignLeftAndRights(views)
+public func alignHorizontalEnds(_ views: View...) -> [View] {
+    return alignHorizontalEnds(views)
 }
 
 @discardableResult
-public func alignLeftAndRights(_ views: [View]) -> [View] {
-    alignLefts(views)
-    alignRights(views)
-    return views
-}
-
-@discardableResult
-public func alignLeadingAndTrailings(_ views: View...) -> [View] {
-    return alignLeadingAndTrailings(views)
-}
-
-@discardableResult
-public func alignLeadingAndTrailings(_ views: [View]) -> [View] {
+public func alignHorizontalEnds(_ views: [View]) -> [View] {
     alignLeadings(views)
     alignTrailings(views)
     return views
 }
 
 @discardableResult
-public func alignTopAndBottoms(_ views: View...) -> [View] {
-    return alignTopAndBottoms(views)
+public func alignVerticalEnds(_ views: View...) -> [View] {
+    return alignVerticalEnds(views)
 }
 
 @discardableResult
-public func alignTopAndBottoms(_ views: [View]) -> [View] {
+public func alignVerticalEnds(_ views: [View]) -> [View] {
     alignTops(views)
     alignBottoms(views)
     return views
@@ -146,8 +112,8 @@ public func alignAllEdges(_ views: View...) -> [View] {
 
 @discardableResult
 public func alignAllEdges(_ views: [View]) -> [View] {
-    alignLeftAndRights(views)
-    alignTopAndBottoms(views)
+    alignHorizontalEnds(views)
+    alignVerticalEnds(views)
     return views
 }
 
@@ -162,10 +128,6 @@ private func align(_ attribute: LayoutAttribute, views: [View]) {
 
 private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
     switch attribute {
-    case .left:
-        v1.laLeft == v2.laLeft
-    case .right:
-        v1.laRight == v2.laRight
     case .top:
         v1.laTop == v2.laTop
     case .bottom:
@@ -184,16 +146,6 @@ private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
 }
 
 extension Array where Element: View {
-    @discardableResult
-    public func alignLefts() -> Array<View> {
-        return Bricking.alignLefts(self)
-    }
-    
-    @discardableResult
-    public func alignRights() -> Array<View> {
-        return Bricking.alignRights(self)
-    }
-    
     public func alignLeadings() -> Array<View> {
         return Bricking.alignLeadings(self)
     }

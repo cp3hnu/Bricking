@@ -28,6 +28,10 @@ public struct CPLayoutAnchor<Anchor, AnchorType> where Anchor : NSLayoutAnchor<A
         return CPLayoutAnchor(anchor: left.anchor, constant: left.constant + right)
     }
     
+    static public func + (left: CGFloat, right: CPLayoutAnchor<Anchor, AnchorType>) -> CPLayoutAnchor<Anchor, AnchorType> {
+        return right + left
+    }
+    
     static public func - (left: CPLayoutAnchor<Anchor, AnchorType>, right: CGFloat) -> CPLayoutAnchor<Anchor, AnchorType> {
         return left + (-right)
     }

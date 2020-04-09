@@ -19,12 +19,20 @@ public extension CPLayoutAttribute {
         return CPLayoutAttribute(view: left.view, attribute: left.attribute, multiplier: left.multiplier, constant: left.constant + right)
     }
     
+    static func + (left: CGFloat, right: CPLayoutAttribute) -> CPLayoutAttribute {
+        return right + left
+    }
+    
     static func - (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
         return left + (-right)
     }
     
     static func * (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
-        return CPLayoutAttribute(view: left.view, attribute: left.attribute, multiplier: left.multiplier * right, constant:left.constant)
+        return CPLayoutAttribute(view: left.view, attribute: left.attribute, multiplier: left.multiplier * right, constant: left.constant)
+    }
+    
+    static func * (left: CGFloat, right: CPLayoutAttribute) -> CPLayoutAttribute {
+        return right * left
     }
     
     static func / (left: CPLayoutAttribute, right: CGFloat) -> CPLayoutAttribute {
@@ -80,7 +88,7 @@ public extension CPLayoutAttribute {
             superview = nil
         }
         
-        if attribute == .right || attribute == .bottom {
+        if attribute == .trailing || attribute == .bottom {
             constant = -right
         }
         

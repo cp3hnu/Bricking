@@ -49,7 +49,7 @@ extension View {
                 alignHorizontally(views)
                 guard let view = views.first else { break }
                 addConstraints(objects: objects, index: index, view: view, flexibleMargin: &previousFlexibleMargin)
-            case is CenterYPlaceHolder:
+            case is CenterY:
                 let fm: FlexibleMargin
                 let idx: Int
                 if let pfm = previousFlexibleMargin {
@@ -64,7 +64,8 @@ extension View {
                     self.flexiableAttribute(self.laCenterY, fm: fm, attribute2: preView.laBottom)
                 }
                 previousFlexibleMargin = nil
-            default: break
+            default:
+                previousFlexibleMargin = nil
             }
         }
         
@@ -124,7 +125,7 @@ private extension View {
             self.flexiableAttribute(view.laTop, fm: fm, attribute2: preView.laBottom)
         } else if let preViews = preObject as? [View], preViews.count != 0 {
             self.flexiableAttribute(view.laTop, fm: fm, attribute2: preViews.first!.laBottom)
-        } else if preObject is CenterYPlaceHolder {
+        } else if preObject is CenterY {
             self.flexiableAttribute(view.laTop, fm: fm, attribute2: self.laCenterY)
         } else if let anchor = preObject as? NSLayoutYAxisAnchor {
             self.flexiableAnchor(view.topAnchor, fm: fm, anchor2: anchor)

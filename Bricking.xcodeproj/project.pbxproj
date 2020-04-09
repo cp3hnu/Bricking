@@ -59,7 +59,6 @@
 		DB7E1F0A20106A10009ECC1A /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB73B3E320035A6A00332E72 /* Grid.swift */; };
 		DB7E1F0B20106ACD009ECC1A /* Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56ED6420036FAF00FB7824 /* Others.swift */; };
 		DBDB1C401F735C8F0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
-		DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB1C3F1F735C8F0037DC7C /* CPScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,7 +402,6 @@
 				DB40F5E11F3D49FB00CEC4DD /* Alignment.swift in Sources */,
 				DB40F5EF1F3D49FB00CEC4DD /* Fill.swift in Sources */,
 				DB40F5FB1F3D49FB00CEC4DD /* Vertically.swift in Sources */,
-				DBDB1C411F735D1B0037DC7C /* CPScrollView.swift in Sources */,
 				DB40F5ED1F3D49FB00CEC4DD /* EqualSize.swift in Sources */,
 				DB40F5EB1F3D49FB00CEC4DD /* DoubleDash.swift in Sources */,
 				DB1FE2E3215A1EBE00DD06B0 /* NSLayoutDimension+OP.swift in Sources */,
@@ -640,7 +638,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-MacOS";
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
@@ -666,7 +664,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-MacOS";
 				PRODUCT_NAME = Bricking;
 				SDKROOT = macosx;
@@ -689,7 +687,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;
@@ -713,7 +711,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.datayp.Bricking-iOS";
 				PRODUCT_NAME = Bricking;
 				SKIP_INSTALL = YES;

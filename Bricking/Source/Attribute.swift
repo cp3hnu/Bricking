@@ -16,18 +16,6 @@ import Foundation
 // MARK: - Fixable
 extension View {
     @discardableResult
-    public func left(_ points: CGFloat) -> Self {
-        self.laLeft == points
-        return self
-    }
-    
-    @discardableResult
-    public func right(_ points: CGFloat) -> Self {
-        self.laRight == points
-        return self
-    }
-    
-    @discardableResult
     public func leading(_ points: CGFloat) -> Self {
         self.laLeading == points
         return self
@@ -73,16 +61,6 @@ extension View {
 
 // MARK: - Flexible
 extension View {
-    @discardableResult
-    public func left(_ fm: FlexibleMargin) -> Self {
-        return flexiableAttribute(self.laLeft, fm: fm)
-    }
-    
-    @discardableResult
-    public func right(_ fm: FlexibleMargin) -> Self {
-        return flexiableAttribute(self.laRight, fm: fm)
-    }
-    
     @discardableResult
     public func leading(_ fm: FlexibleMargin) -> Self {
         return flexiableAttribute(self.laLeading, fm: fm)

@@ -44,14 +44,6 @@ extension View {
         return CPLayoutAttribute(view: self, attribute: .bottom)
     }
     
-    public var laLeft: CPLayoutAttribute {
-        return CPLayoutAttribute(view: self, attribute: .left)
-    }
-    
-    public var laRight: CPLayoutAttribute {
-        return CPLayoutAttribute(view: self, attribute: .right)
-    }
-    
     public var laLeading: CPLayoutAttribute {
         return CPLayoutAttribute(view: self, attribute: .leading)
     }
