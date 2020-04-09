@@ -64,8 +64,10 @@ extension View {
                     self.flexiableAttribute(self.laCenterY, fm: fm, attribute2: preView.laBottom)
                 }
                 previousFlexibleMargin = nil
-            default:
+            case is String:
                 previousFlexibleMargin = nil
+            default:
+                break
             }
         }
         
