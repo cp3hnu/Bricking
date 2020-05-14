@@ -17,7 +17,7 @@ import Foundation
 extension Array where Element: View {
     @discardableResult
     public func groupCenterHorizontally() -> View {
-        guard self.count > 0 else { return View() }
+        guard self.count > 1 else { return View() }
         
         let wrappedView = View()
         var spaces = [CGFloat]()
@@ -48,8 +48,9 @@ extension Array where Element: View {
 // MARK: - Line horizontally
 extension Array where Element: View {
     @discardableResult
+    // |-left-view1-space-view2-right-|
     public func linearFixedSpace(space: CGFloat = 0, left: CGFloat = 0, right: CGFloat = 0) -> Array {
-        guard count > 0 else { return self }
+        guard count > 1 else { return self }
         
         var preView = first!
         preView.leading(left)
@@ -63,11 +64,11 @@ extension Array where Element: View {
     }
     
     @discardableResult
+    // |-left-view1-0-spaceView-0-view2-0-spaceView-0-view3-right-|
     public func linearEqualSpace(left: CGFloat = 0, right: CGFloat = 0) -> [View] {
-        guard count > 0 else { return self }
+        guard count > 1 else { return self }
         
         let spaceViews = (0..<count-1).map { _ in return View() }
-        
         first!.superview?.asv(spaceViews)
         first!.leading(left)
         last!.trailing(right)
@@ -75,6 +76,25 @@ extension Array where Element: View {
             let item = self[idx]
             let nextItem = self[idx+1]
             item-0-spaceView-0-nextItem
+        }
+        spaceViews.equalWidths()
+        
+        return self + spaceViews
+    }
+    
+    @discardableResult
+    // |-left-spaceView-0-view1-0-spaceView-0-view2-0-spaceView-right-|
+    public func linearEvenly(left: CGFloat = 0, right: CGFloat = 0) -> [View] {
+        guard count > 1 else { return self }
+        
+        let spaceViews = (0..<count+1).map { _ in return View() }
+        first!.superview?.asv(spaceViews)
+        spaceViews.first!.leading(left)
+        spaceViews.last!.trailing(right)
+        for (idx, item) in self.enumerated() {
+            let spaceItem = spaceViews[idx]
+            let nextSpaceItem = spaceViews[idx+1]
+            spaceItem-0-item-0-nextSpaceItem
         }
         spaceViews.equalWidths()
         

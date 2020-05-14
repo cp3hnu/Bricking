@@ -146,6 +146,7 @@ private func align(_ attribute: LayoutAttribute, v1: View, with v2: View) {
 }
 
 extension Array where Element: View {
+    @discardableResult
     public func alignLeadings() -> Array<View> {
         return Bricking.alignLeadings(self)
     }
@@ -173,5 +174,20 @@ extension Array where Element: View {
     @discardableResult
     public func alignVertically() -> Array<View> {
         return Bricking.alignVertically(self)
+    }
+    
+    @discardableResult
+    public func alignHorizontalEnds() -> Array<View> {
+        return Bricking.alignHorizontalEnds(self)
+    }
+    
+    @discardableResult
+    public func alignVerticalEnds() -> Array<View> {
+        return Bricking.alignVerticalEnds(self)
+    }
+    
+    @discardableResult
+    public func alignAllEdges() -> Array<View> {
+        return Bricking.alignAllEdges(self)
     }
 }
