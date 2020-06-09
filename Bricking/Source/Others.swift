@@ -77,7 +77,8 @@ extension Array where Element: View {
             let nextItem = self[idx+1]
             item-0-spaceView-0-nextItem
         }
-        spaceViews.equalWidths()
+        spaceViews.first?.height(0).top(0)
+        spaceViews.equalSizes().alignTops()
         
         return self + spaceViews
     }
@@ -96,7 +97,8 @@ extension Array where Element: View {
             let nextSpaceItem = spaceViews[idx+1]
             spaceItem-0-item-0-nextSpaceItem
         }
-        spaceViews.equalWidths()
+        spaceViews.first?.height(0).top(0)
+        spaceViews.equalSizes().alignTops()
         
         return self + spaceViews
     }
