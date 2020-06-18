@@ -7,6 +7,7 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
 
 open class CPScrollView: UIScrollView {
@@ -50,3 +51,4 @@ open class CPScrollView: UIScrollView {
         return self
     }
 }
+#endif
