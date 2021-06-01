@@ -24,6 +24,38 @@ extension View {
         return layoutVertically(objects)
     }
     
+    @available(iOS 11.0, *)
+    @discardableResult
+    public func layoutInSafeArea(_ objects: Any...) -> [View] {
+        return layoutDynamicallyInSafeArea(objects)
+    }
+    
+    @available(iOS 11.0, *)
+    @discardableResult
+    public func layoutDynamicallyInSafeArea(_ objects: [Any]) -> [View] {
+        var newObjects = objects
+        if (objects.count > 0) {
+            switch objects[0] {
+                case is Int,
+                    is Float,
+                    is CGFloat:
+                    newObjects.insert(safeAreaLayoutGuide.topAnchor, at: 0)
+                default: break
+                    
+            }
+            switch objects[objects.count-1] {
+                case is Int,
+                    is Float,
+                    is CGFloat:
+                    newObjects.append(safeAreaLayoutGuide.bottomAnchor)
+                default: break
+            }
+        }
+        
+        return layoutVertically(newObjects)
+    }
+    
+    
     private func layoutVertically(_ objects: [Any]) -> [View] {
         let count = objects.count
         var previousFlexibleMargin: FlexibleMargin? = nil

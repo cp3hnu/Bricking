@@ -44,8 +44,7 @@ class SecondCtrlr: UIViewController {
         
         view.asv(view1, view2, view3, view4)
         if #available(iOS 11, *) {
-            view.layout(
-                self.view.safeAreaLayoutGuide.topAnchor,
+            view.layoutInSafeArea(
                 10,
                 |view1| ~ 50,
                 30,
@@ -53,7 +52,7 @@ class SecondCtrlr: UIViewController {
                 |view3| ~ 50,
                 40,
                 |view4|,
-                self.view.safeAreaLayoutGuide.bottomAnchor
+                0
             )
         } else {
             view.layout(

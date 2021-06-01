@@ -47,6 +47,13 @@ extension View {
     }
     
     @discardableResult
+    public func size(_ size: CGSize) -> Self {
+        width(size.width)
+        height(size.height)
+        return self
+    }
+    
+    @discardableResult
     public func width(_ points: CGFloat) -> Self {
         self.laWidth == points
         return self
