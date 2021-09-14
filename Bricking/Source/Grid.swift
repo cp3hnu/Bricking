@@ -14,20 +14,31 @@ import Foundation
 #endif
 
 extension Array where Element: View {
-    public func grid(numberOfLine: Int, edgeInsets: EdgeInsets = EdgeInsets(top: 0, left: 0, bottom: 0, right: 0), hSpace: CGFloat = 0, vSpace: CGFloat = 0) {
+    public func grid(numberOfLine: Int, edgeInsets: EdgeInsets = EdgeInsets(top: 0, left: 0, bottom: 0, right: 0), hSpace: CGFloat = 0, vSpace: CGFloat = 0, equalWidth: Bool = true, stretch: Bool = true) {
         
         guard count > 0 else { return }
         guard let superView = self.first!.superview else {
             return
         }
         
-        self.equalWidths()
-        if count < numberOfLine {
-            self.first!.width((100.0/CGFloat(numberOfLine))%)
+        // 是否等宽
+        if equalWidth {
+            self.equalWidths()
         }
-        
+       
         self.first!.top(edgeInsets.top).leading(edgeInsets.left)
         self.last!.bottom(edgeInsets.bottom)
+
+        // 如果只有一个且一排只排一个
+        if stretch && numberOfLine == 1 && count == 1 {
+            self.last!.trailing(edgeInsets.right)
+            return
+        }
+        
+        if count < numberOfLine {
+            self.first!.laWidth == (CGFloat(1) / CGFloat(numberOfLine)) * superView.laWidth - (edgeInsets.left + edgeInsets.right + CGFloat(numberOfLine - 1) * hSpace) / CGFloat(numberOfLine)
+        }
+        
         var preHoriView = self.first!
         var preVertView = self.first!
         for (idx, itemView) in self.enumerated() {
@@ -43,7 +54,11 @@ extension Array where Element: View {
                     preVertView = itemView
                 }
             case numberOfLine - 1:
-                (preHoriView-hSpace-itemView-edgeInsets.right-|).alignHorizontally()
+                (preHoriView-hSpace-itemView).alignHorizontally()
+                // 是否伸展到右边界
+                if stretch {
+                    itemView-edgeInsets.right-|
+                }
             default:
                 (preHoriView-hSpace-itemView).alignHorizontally()
                 preHoriView = itemView
