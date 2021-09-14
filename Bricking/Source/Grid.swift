@@ -13,7 +13,16 @@ import Foundation
     import AppKit
 #endif
 
+// MARK: - Grid Layout
 extension Array where Element: View {
+    /// Grid layout.
+    /// - Parameters:
+    ///   - numberOfLine: The number of line.
+    ///   - edgeInsets: The edge insets.
+    ///   - hSpace: The horizotal space between views.
+    ///   - vSpace: The vertical space between lines.
+    ///   - equalWidth: Whether views is equal width. The default value is true.
+    ///   - stretch: Whether stretch view  when the count of views less than numberOfLine. The default value is true.
     public func grid(numberOfLine: Int, edgeInsets: EdgeInsets = EdgeInsets(top: 0, left: 0, bottom: 0, right: 0), hSpace: CGFloat = 0, vSpace: CGFloat = 0, equalWidth: Bool = true, stretch: Bool = true) {
         
         guard count > 0 else { return }

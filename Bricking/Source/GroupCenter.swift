@@ -15,7 +15,10 @@ import Foundation
 
 // MARK: - Multiple views are centered horizontally together
 extension Array where Element: View {
+    /// Multiple views are centered horizontally together.
+    /// - Returns: The superview of these views.
     @discardableResult
+    
     public func groupCenterHorizontally() -> View {
         guard self.count > 1 else { return View() }
         
